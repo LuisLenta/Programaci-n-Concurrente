@@ -82,7 +82,11 @@ public class LeerExcel {
 	 System.out.println("Cantidad de filas " + filas);
 	
 	 //Ahora que tengo la cantidad de filas y columnas armo la matriz.
+	 //Cambiar por int, para que coincida con la clase matriz.
+	 //Es mas, habria que usar un objeto matriz.
 	 double matriz[][] = new double [filas][columnas];
+	 
+	 
 	 
 	 //Lleno la matriz de 9999
 	 for(int aux=0; aux<filas; aux++ )

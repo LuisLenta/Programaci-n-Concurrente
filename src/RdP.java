@@ -107,7 +107,7 @@ public class RdP {
 				// No le pongo transicion-1 porque lo hace crearVectorDisparo()
 
 				Matriz VDisparo = crearVectorDisparo(transicion);
-				MarcadoActual.sumar(MIncidencia.mmult(VDisparo).transpuesta());
+				MarcadoActual.sumar(MIncidencia.mmult(VDisparo).transpuesta());      //Mi+1  = M0 + I*D
 				calcularSensibilizadas();
 				System.out.println("Se Disparo la transicion " + transicion);
 				return true;
@@ -124,6 +124,9 @@ public class RdP {
 	// La matriz obtenida de
 	// esta multiplicacion, se compara con el marcado actual, y de ahi sabemos
 	// cuales estan sensibilizadas.
+	//Para esto se va fijando en cada columna de la matriz aux si hay algun numero mayor que en la columna de marcado inicial.
+	//Si esto sucede automaticamente esa transicion no esta sensibilizada.
+	//Si recorre toda la columna de aux y no encuentra ningun numero mayor a los de la matriz marcado inicial. La transicion esta sensibilizada.
 	public void calcularSensibilizadas() {
 
 		Matriz aux = new Matriz(MIncidenciaPrevia.getFilCount(), MDisparos.getColCount());

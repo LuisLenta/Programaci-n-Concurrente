@@ -33,14 +33,21 @@ public class GestorDeMonitor {
 			System.out.println("Salio de la cola " + Thread.currentThread().getName());
 			mutex.acquire();
 		}
-
+		
+		
+		
+		
 		Matriz vs = Red.getSensibilizadas();
 
 		Matriz vc = Cola.quienesEstan();
 		Matriz m = vs.and(vc);
 
 		System.out.println("Es cero" + m.esCero());
-		mutex.release();
+		
+		
+		  //Aca estaba mutex.release();
+		
+		
 		System.out.println("Hizo release");
 		if (!m.esCero()) { // Tengo que hacer andar las politicas, porque asi,
 							// se me arma lio cuando un hilo esta haciendo el
@@ -64,5 +71,7 @@ public class GestorDeMonitor {
 			Cola.desencolar(aux);
 
 		}
+		
+		mutex.release();
 	}
 }
