@@ -36,10 +36,18 @@ public class Process1A1 implements Runnable {
 			{	
 				Thread.sleep(10);
 				
+				//System.out.println("Robot1 deposita pieza en Maquina1");
 				robot1.depositarPiezaMaquina(maquina1, GdeMonitor, 1);
+				
+				maquina1.trabajar();
+				//System.out.println("Robot2 toma pieza de Maquina1");
 				robot2.tomarPiezaMaquina(maquina1, GdeMonitor);
+				//System.out.println("Robot2 deposita pieza en Maquina2");
 				robot2.depositarPiezaMaquina(maquina2, GdeMonitor, 1);
+				maquina2.trabajar();
+				//System.out.println("Robot3 toma pieza de maquina2");
 				robot3.tomarPiezaMaquina(maquina2, GdeMonitor);
+				//System.out.println("Robot3 deposita pieza en Output3");
 				robot3.depositarPiezaOutput(GdeMonitor, 1);
 				
 			}

@@ -42,16 +42,15 @@ public class Process2 implements Runnable{
 			while(true)
 			{	
 				
-				Thread.sleep(100);
-				System.out.println("TomaPiezaImput2");
+				Thread.sleep(10);
+				//System.out.println("Robot2 toma pieza Input 2 ");
 				robot2.tomarPiezaImput(GdeMonitor); 
-				System.out.println("Robot2DepositaPiezaMaquina2");
+				//System.out.println("Robot2 deposita pieza Maquina2");
 				robot2.depositarPiezaMaquina(maquina2, GdeMonitor, 2);
-				System.out.println("Maquina Trabajando");
 				maquina2.trabajar();
-				System.out.println("Robot2TomaPiezaMaquina2");
+				//System.out.println("Robot2 toma pieza Maquina2");
 				robot2.tomarPiezaMaquina(maquina2, GdeMonitor); 
-				System.out.println("Robot2DepositaPiezaOutput2");
+				//System.out.println("Robot2 deposita pieza Output2");
 				robot2.depositarPiezaOutput(GdeMonitor, 0); 
 			
 				

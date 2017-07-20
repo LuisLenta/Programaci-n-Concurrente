@@ -18,8 +18,8 @@ public Maquina(int numMaquina)
  {
 	 try
 	 {
-		 System.out.println("Ahora trabajo");
-		 Thread.sleep(500);
+		 
+		 Thread.sleep(50);
 	 }
 	 catch (InterruptedException e) {
 			e.printStackTrace();

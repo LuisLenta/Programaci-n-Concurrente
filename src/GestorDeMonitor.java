@@ -20,6 +20,8 @@ public class GestorDeMonitor {
 	}
 
 	public void dispararTransicion(int transicion) throws InterruptedException {
+		
+		System.out.println("Hay otros hilos esperando: " + mutex.getQueueLength());
 		mutex.acquire();
 		System.out.println("Entro al monitor " + Thread.currentThread().getName());
 		Red.getSensibilizadas().imprimir();
@@ -28,9 +30,10 @@ public class GestorDeMonitor {
 		while (!Red.disparar(transicion)) {
 
 			mutex.release();
-			System.out.println("Encole " + transicion);
+			System.out.println("Encole " + transicion + "  "+ Thread.currentThread().getName());
 			Cola.encolar(transicion);
 			System.out.println("Salio de la cola " + Thread.currentThread().getName());
+			System.out.println("Hay otros hilos esperando: " + mutex.getQueueLength());
 			mutex.acquire();
 		}
 		
@@ -41,14 +44,17 @@ public class GestorDeMonitor {
 
 		Matriz vc = Cola.quienesEstan();
 		Matriz m = vs.and(vc);
-
+		System.out.println("Matriz m ");
+		m.imprimir();
+        System.out.println("Sensibilizadas antes de las politicas ");
+        Red.getSensibilizadas().imprimir();
 		System.out.println("Es cero" + m.esCero());
 		
 		
 		  //Aca estaba mutex.release();
 		
 		
-		System.out.println("Hizo release");
+		
 		if (!m.esCero()) { // Tengo que hacer andar las politicas, porque asi,
 							// se me arma lio cuando un hilo esta haciendo el
 							// for para ver cual desencola, otro hilo intenta
@@ -59,19 +65,21 @@ public class GestorDeMonitor {
 			Cola.quienesEstan().imprimir();
 			for (int j = 0; j < Red.getSensibilizadas().getColCount(); j++) {
 
-				if ((Red.getSensibilizadas().getValor(0, j)) == 1 & (Cola.quienesEstan().getValor(0, j) == 1)) {
+				if ((Red.getSensibilizadas().getValor(0, j)) == 1 && (Cola.quienesEstan().getValor(0, j) == 1)) {
 					System.out.println("Sensibilizada " + Red.getSensibilizadas().getValor(0, j));
 					System.out.println("En cola " + Cola.quienesEstan().getValor(0, j));
 					aux = j + 1;
 					break;
 				}
 			}
-
+			if(aux != 0){
 			System.out.println("Desencolo " + aux);
 			Cola.desencolar(aux);
-
+			}
+		
 		}
 		
+		System.out.println("Yo hago release" + Thread.currentThread().getName());
 		mutex.release();
 	}
 }

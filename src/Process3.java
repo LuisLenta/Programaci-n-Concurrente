@@ -37,19 +37,20 @@ public class Process3 implements Runnable{
 		{
 			while(true)
 			{
-				Thread.sleep(100);
-				System.out.println("TomaPiezaImput3");
+				Thread.sleep(10);
+				//System.out.println("Robot3 toma pieza Imput3");
 				robot3.tomarPiezaImput(GdeMonitor); 
-				System.out.println("RobotDepositaPiezaMaquina4");
+				//System.out.println("Robot3 deposita pieza Maquina4");
 				robot3.depositarPiezaMaquina(maquina4, GdeMonitor, 3);
-				
-				System.out.println("Robot2TomaPiezaMaquina4");
+				maquina4.trabajar();
+				//System.out.println("Robot2 toma pieza Maquina4");
 				robot2.tomarPiezaMaquina(maquina4, GdeMonitor);
-				System.out.println("Robot2DepositaPiezaMaquina3");
+				//System.out.println("Robot2 deposita pieza Maquina3");
 				robot2.depositarPiezaMaquina(maquina3, GdeMonitor, 3);
-				System.out.println("Robot1TomaPiezaMaquina3");
+				maquina3.trabajar();
+				//System.out.println("Robot1 toma pieza Maquina3");
 				robot1.tomarPiezaMaquina(maquina3, GdeMonitor);
-				System.out.println("Robot1DepositaPiezaOutput3");
+				//System.out.println("Robot1 deposita pieza Output3");
 				robot1.depositarPiezaOutput(GdeMonitor, 0);
 				
 			}
