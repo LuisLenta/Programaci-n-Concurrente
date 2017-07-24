@@ -13,6 +13,9 @@ public class RdP {
 
 	private Matriz MarcadoInicial, MarcadoActual, MIncidencia, MInhibicion, MSensibilizadas, MDisparos,
 			MIncidenciaPrevia;
+	
+	//private int piezasA=0, piezasB=0, piezasC=0;
+	
 
 	public RdP() throws IOException {
 
@@ -110,6 +113,15 @@ public class RdP {
 				MarcadoActual.sumar(MIncidencia.mmult(VDisparo).transpuesta());      //Mi+1  = M0 + I*D
 				calcularSensibilizadas();
 				System.out.println("Se Disparo la transicion " + transicion);
+				//Llevo la cuenta de cuantas piezas se hicieron para las politicas
+				/*if(transicion == 17){ this.agregarPiezaA();}
+				if(transicion == 10){ this.agregarPiezaB();}
+				if(transicion == 3){ this.agregarPiezaC();}
+				
+				
+				System.out.println("Cantidad de Piezas A: " + this.getPiezasA() );
+				System.out.println("Cantidad de Piezas B: " + this.getPiezasB() );
+				System.out.println("Cantidad de Piezas C: " + this.getPiezasC() );*/
 				return true;
 			}
 		}
@@ -836,7 +848,33 @@ public class RdP {
 		}
 
 	}
+/*
+	public int getPiezasA() {
+		return piezasA;
+	}
 
+	public void agregarPiezaA() {
+		this.piezasA = piezasA + 1;
+	}
+
+	public int getPiezasB() {
+		return piezasB;
+	}
+
+	public void agregarPiezaB() {
+		this.piezasB = piezasB + 1;
+	}
+
+	public int getPiezasC() {
+		return piezasC;
+	}
+
+	public void agregarPiezaC() {
+		this.piezasC = piezasC + 1;
+	}
+
+	
+*/
 	/*
 	 * public void cargarMatriz (Matriz matriz, String rutaAcceso) throws
 	 * IOException {

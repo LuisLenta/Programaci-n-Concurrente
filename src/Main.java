@@ -24,8 +24,10 @@ public class Main {
 		*/
 	
 		RdP Red = new RdP();
+		
+	    Politicas politicas = new Politicas();
 		Colas cola = new Colas(20);
-		GestorDeMonitor GdeMonitor = new GestorDeMonitor(Red, cola);
+		GestorDeMonitor GdeMonitor = new GestorDeMonitor(Red, cola, politicas);
 		
 		Robot robot1 = new Robot (1);
 		Robot robot2 = new Robot (2); 
@@ -43,7 +45,7 @@ public class Main {
 		new Process3(robot1, robot2, robot3, maquina3, maquina4, GdeMonitor);
 		new Process1A1 (robot1, robot2, robot3, maquina1, maquina2, GdeMonitor );
 		new Process1A2 (robot1, robot2, robot3, maquina3, maquina4, GdeMonitor);
-		
+	
 	}
 		
 	 

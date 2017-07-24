@@ -30,8 +30,8 @@ public class InitProcess1 implements Runnable{
 			while(true)
 			{	
 				
-				//Thread.sleep(10);
-				System.out.println("TomaPiezaImput1");
+				Thread.sleep(10);
+				//System.out.println("TomaPiezaImput1");
 				robot1.tomarPiezaImput(GdeMonitor); 
 			
 				

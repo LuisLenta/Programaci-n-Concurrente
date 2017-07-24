@@ -6,22 +6,24 @@ public class GestorDeMonitor {
 	private RdP Red;
 	private Colas Cola;
 	private Semaphore mutex;
-
+	private Politicas Politica;
 	// Hay que hacerlo privado me parece! Para que nadie pueda entrar al
 	// constructor del Gestor de Monitor
 	// Para eso tendriamos que armar packages.
 	// Por ahora lo uso publico para hacer las pruebas
-	public GestorDeMonitor(RdP Red, Colas Cola) {
+	//En realidad hay que hacerlo privado para que cumpla Singleton
+	public GestorDeMonitor(RdP Red, Colas Cola, Politicas Politica) {
 
 		this.Red = Red;
 		this.Cola = Cola;
+		this.Politica = Politica;
 		mutex = new Semaphore(1, true);
 
 	}
 
 	public void dispararTransicion(int transicion) throws InterruptedException {
 		
-		System.out.println("Hay otros hilos esperando: " + mutex.getQueueLength());
+		System.out.println("Hay otros hilos esperando A : " + mutex.getQueueLength());
 		mutex.acquire();
 		System.out.println("Entro al monitor " + Thread.currentThread().getName());
 		Red.getSensibilizadas().imprimir();
@@ -33,12 +35,18 @@ public class GestorDeMonitor {
 			System.out.println("Encole " + transicion + "  "+ Thread.currentThread().getName());
 			Cola.encolar(transicion);
 			System.out.println("Salio de la cola " + Thread.currentThread().getName());
-			System.out.println("Hay otros hilos esperando: " + mutex.getQueueLength());
+			System.out.println("Hay otros hilos esperando B: " + mutex.getQueueLength());
 			mutex.acquire();
 		}
 		
+		//Cuento las piezas que se van haciendo
+		if(transicion == 17){ Politica.agregarPiezaA(); }
+		if(transicion == 10){ Politica.agregarPiezaB(); }
+		if(transicion == 3){ Politica.agregarPiezaC(); }
 		
-		
+		System.out.println("Cantidad de piezas A: " + Politica.getPiezasA());
+		System.out.println("Cantidad de piezas B: " + Politica.getPiezasB());
+		System.out.println("Cantidad de piezas C: " + Politica.getPiezasC());
 		
 		Matriz vs = Red.getSensibilizadas();
 
@@ -54,7 +62,7 @@ public class GestorDeMonitor {
 		  //Aca estaba mutex.release();
 		
 		
-		
+		/*
 		if (!m.esCero()) { // Tengo que hacer andar las politicas, porque asi,
 							// se me arma lio cuando un hilo esta haciendo el
 							// for para ver cual desencola, otro hilo intenta
@@ -63,6 +71,8 @@ public class GestorDeMonitor {
 			int aux = 0;
 			System.out.println("Politica ");
 			Cola.quienesEstan().imprimir();
+			//Fijarse que puede pasar que cuando llame a la politica, la politica me diga que tengo ciertas transiciones para disparar
+			//que no necesariamente van a coincidir con los hilos en la cola, controlar eso.
 			for (int j = 0; j < Red.getSensibilizadas().getColCount(); j++) {
 
 				if ((Red.getSensibilizadas().getValor(0, j)) == 1 && (Cola.quienesEstan().getValor(0, j) == 1)) {
@@ -72,13 +82,25 @@ public class GestorDeMonitor {
 					break;
 				}
 			}
-			if(aux != 0){
+			// Lo pongo para solucionar el problema de cuando un hilo se desencola,  y entra otro distinto al monitor.
+			// ya que le gana en agarrar el mutex.
+			
+			if(aux != 0){   
 			System.out.println("Desencolo " + aux);
 			Cola.desencolar(aux);
 			}
 		
 		}
-		
+		*/
+		//Aca empieza lo nuevo
+		if (!m.esCero()) {
+			
+			int aux = 0;
+			System.out.println("Politica ");
+			Cola.quienesEstan().imprimir();
+			Cola.desencolar(Politica.cual(m));
+		}
+		//Aca termina
 		System.out.println("Yo hago release" + Thread.currentThread().getName());
 		mutex.release();
 	}
