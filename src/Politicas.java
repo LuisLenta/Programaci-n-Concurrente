@@ -476,4 +476,115 @@ public class Politicas {
 		}
 		return transicion;
 	}
+	
+	public int cual3(Matriz m){
+		
+		boolean linea1A1 = false;
+		boolean linea1A2 = false;
+		boolean linea2 = false;
+		boolean linea3 = false;
+
+		int transicion = 0;
+
+		linea1A1 = this.tieneTransicion(process1A1, m);
+		linea1A2 = this.tieneTransicion(process1A2, m);
+		linea2 = this.tieneTransicion(process2, m);
+		linea3 = this.tieneTransicion(process3, m);
+
+		System.out.println("Las lineas estan: L1A1= " + linea1A1 + " L1A2= " + linea1A2 + " L2= " + linea2 + " L3= " + linea3);
+		
+		if (linea1A1 && linea1A2 && linea2 && linea3) {
+			
+			
+			if(this.getPorcentajePiezaC() < 17){
+				
+				transicion = this.buscaTransicion(process3, m);
+			}
+			else if(this.getPorcentajePiezaB() < 33){
+				
+				transicion = this.buscaTransicion(process2, m);
+			}
+			else if(this.getPorcentajePiezaA() < 50){
+				
+				transicion = this.buscaTransicion(process1A1, m);
+				transicion = this.buscaTransicion(process1A2, m);
+			}
+			else System.out.println("Error grande como una casa 2");
+		}
+		else if (linea1A1 && linea1A2) {
+			
+			transicion = this.buscaTransicion(process1A1, m);
+
+			transicion = this.buscaTransicion(process1A2, m);
+		}
+		else if (linea1A1 && linea2){
+			
+			if(this.getPorcentajePiezaB() < 33){
+				transicion = this.buscaTransicion(process2, m);
+			}
+			else{
+				transicion = this.buscaTransicion(process1A1, m);
+			}
+		}
+		else if (linea1A1 && linea3){
+			
+			if(this.getPorcentajePiezaC() < 17){
+				transicion = this.buscaTransicion(process3, m);
+			}
+			else{
+				transicion = this.buscaTransicion(process1A1, m);
+			}
+		}
+		else if (linea1A2 && linea2){
+			
+			if(this.getPorcentajePiezaB() < 33){
+				transicion = this.buscaTransicion(process2, m);
+			}
+			else{
+				transicion = this.buscaTransicion(process1A2, m);
+			}
+		}
+		else if (linea1A2 && linea3){
+			
+			if(this.getPorcentajePiezaC() < 17){
+				transicion = this.buscaTransicion(process3, m);
+			}
+			else{
+				transicion = this.buscaTransicion(process1A2, m);
+			}
+		}
+		 else if (linea2 && linea3){
+			 
+			 if(this.getPorcentajePiezaC() < 17){
+				 transicion = this.buscaTransicion(process3, m);
+			 }
+			 else{
+				 transicion = this.buscaTransicion(process2, m);
+			 }
+		 }
+		 else if (linea1A1) {
+
+				transicion = this.buscaTransicion(process1A1, m);
+
+			} else if (linea1A2) {
+
+				transicion = this.buscaTransicion(process1A2, m);
+
+			} else if (linea2) {
+				
+				transicion = this.buscaTransicion(process2, m);
+			
+			} else if (linea3) {
+
+				
+
+				transicion = this.buscaTransicion(process3, m);
+
+			} else {
+
+				System.out.println("Error grande como una casa");
+			}
+		
+		return transicion;
+	}
 }

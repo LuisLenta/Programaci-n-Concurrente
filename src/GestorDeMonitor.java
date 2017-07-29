@@ -99,7 +99,8 @@ public class GestorDeMonitor {
 			System.out.println("Politica ");
 			Cola.quienesEstan().imprimir();
 			//Cola.desencolar(Politica.cual(m));
-			Cola.desencolar(Politica.cual2(m));
+			//Cola.desencolar(Politica.cual2(m));
+			Cola.desencolar(Politica.cual3(m));
 		}
 		//Aca termina
 		System.out.println("Yo hago release" + Thread.currentThread().getName());
