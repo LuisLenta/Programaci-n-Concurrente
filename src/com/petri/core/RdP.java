@@ -31,20 +31,20 @@ public class RdP {
 		String rutaMIncidenciaPrevia = basePath + "IncidenciaPrevia.xlsx";
 		
 		
-		cargarMatriz(rutaMarcadoInicial,TipoMatriz.MarcadoInicial);
+		Utils.cargarMatriz(rutaMarcadoInicial,TipoMatriz.MarcadoInicial,this);
 		//MarcadoInicial.imprimir();
 		
 		//cargarMarcadoActual(rutaMarcadoActual);
-		cargarMatriz(rutaMarcadoActual,TipoMatriz.MarcadoActual);
+		Utils.cargarMatriz(rutaMarcadoActual,TipoMatriz.MarcadoActual,this);
 		
 		//System.out.println("asD aSD asd");//------------------------- aca abajo esta el erro en cargarMInhibicion
-		cargarMatriz(rutaMInhibicion,TipoMatriz.MInhibicion);
+		Utils.cargarMatriz(rutaMInhibicion,TipoMatriz.MInhibicion,this);
 		//cargarMInhibicion(rutaMInhibicion);
 		
-		cargarMatriz(rutaMIncidencia, TipoMatriz.MIncidencia);
+		Utils.cargarMatriz(rutaMIncidencia, TipoMatriz.MIncidencia,this);
 		//cargarMIncidencia(rutaMIncidencia);
 		
-		cargarMatriz(rutaMIncidenciaPrevia,TipoMatriz.MIncidenciaPrevia);
+		Utils.cargarMatriz(rutaMIncidenciaPrevia,TipoMatriz.MIncidenciaPrevia,this);
 		//cargarMIncidenciaPrevia(rutaMIncidenciaPrevia);
 		
 
@@ -70,106 +70,7 @@ public class RdP {
 
 	}
 	
-	public void cargarMatriz(String rutaAcceso,TipoMatriz tipoDeMatriz) throws IOException 
-	{
-		try 
-		{
-			FileInputStream file = new FileInputStream(new File(rutaAcceso));
-
-			XSSFWorkbook workbook = new XSSFWorkbook(file);//abro el archivo en excel
-
-			XSSFSheet sheet = workbook.getSheetAt(0);//selecciono la hoja 0 del excel
-
-			Iterator<Row> rowIterator = sheet.iterator();
-			Iterator<Row> rowIteratorAux = sheet.iterator();
-
-			// row es una fila
-			Row row;
-			Column columna;
-			 
-			Row rowAuxiliar;
-			int cantidadDeColumnas=0;
-			int cantidadDeFilas=0;
-
-			/*
-			 * me fijo la cantidad de columnas que tiene la primer fila, como
-			 * supongo que la matriz esta siempre llena, es decir, todas las
-			 * filas tienen la misma cantidad de columnas con eso me alcanza.
-			 */
-
-			if (rowIteratorAux.hasNext())
-			{
-				rowAuxiliar=rowIteratorAux.next();
-				cantidadDeFilas=sheet.getPhysicalNumberOfRows();
-				cantidadDeColumnas=rowAuxiliar.getPhysicalNumberOfCells();
-				System.out.println("El numero de filas es de: "+cantidadDeFilas);
-				System.out.println("el numero de columnas es de: "+cantidadDeColumnas);
-				//System.out.println(sheet.getSheetName());
-			}
-
-			Matriz matriz = new Matriz(cantidadDeFilas,cantidadDeColumnas);
-
-			// Recorremos todas las filas para mostrar el contenido de cada
-			// celda	
-			//Para acceder a una celda, debemos extraer primero la fila y luego la columna (la celda en sí). Para extraer una Fila, utilizamos el siguiente método (referenciando por índice):
-            for(int i=0; i<cantidadDeFilas;i++)
-            {
-                for(int j=0; j<cantidadDeColumnas;j++)
-                {
-                	
-					Row fila=sheet.getRow(i);
-					Cell celda=fila.getCell(j);
 	
-					switch (celda.getCellType()) 
-					{
-						case Cell.CELL_TYPE_NUMERIC:
-							if (!DateUtil.isCellDateFormatted(celda)) 
-							{
-								matriz.setValor(i, j, (int) celda.getNumericCellValue());
-							}
-							break;
-					}
-				}
-			}
-            
-            switch(tipoDeMatriz)
-            {
-            case MarcadoInicial:
-            	MarcadoInicial=new Matriz(matriz.getMatriz());
-            	break;
-            case MarcadoActual:
-            	System.out.println("aca tenes el marcado actual");
-            	MarcadoActual=new Matriz(matriz.getMatriz());
-            	break;
-            case MIncidencia:
-            	MIncidencia=new Matriz(matriz.getMatriz());
-            	break;
-            case MInhibicion:
-            	MInhibicion=new Matriz(matriz.getMatriz());
-            	break;
-            case MSensibilizadas: 
-            	MSensibilizadas=new Matriz(matriz.getMatriz());
-            	break;
-            case MDisparos:
-            	MDisparos=new Matriz(matriz.getMatriz());
-            	break;
-            case MIncidenciaPrevia:
-            	MIncidenciaPrevia=new Matriz(matriz.getMatriz());
-            	break;
-            }
-
-		}
-		// cerramos el libro excel
-
-		// workbook.close();
-
-		catch (IOException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
 
 	public Matriz getMarcadoInicial() {
 		return MarcadoInicial;
@@ -195,6 +96,54 @@ public class RdP {
 	{
 		return MIncidenciaPrevia;
 	}
+	
+	public Matriz getMatrizDeDisparos()
+	{
+		return this.MDisparos;
+	}
+	
+	
+	
+	
+	
+	
+	
+	public void setMarcadoInicial(Matriz matriz) {
+		MarcadoInicial=matriz;
+	}
+
+	public void setMarcadoActual(Matriz matriz) {
+		MarcadoActual=matriz;
+	}
+
+	public void setMatrizInhibicion(Matriz matriz) {
+		MInhibicion=matriz;
+	}
+
+	public void setSensibilizadas(Matriz matriz) {
+		MSensibilizadas=matriz;
+	}
+
+	public void setMatrizIncidencia(Matriz matriz) {
+		MIncidencia=matriz;
+	}
+	
+	public void setMatrizIncidenciaPrevia(Matriz matriz)
+	{
+		MIncidenciaPrevia=matriz;
+	}
+	
+	public void setMatrizDeDisparos(Matriz matriz)
+	{
+		MDisparos=matriz;
+	}
+	
+	
+	
+	
+	
+	
+	
 
 	// Crea el vector para disparar una transicion
 	public Matriz crearVectorDisparo(int transicion) {
