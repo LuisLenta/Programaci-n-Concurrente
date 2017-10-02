@@ -8,7 +8,7 @@ import java.io.IOException;
 	
 import java.util.Iterator;
 
-import org.apache.poi.hssf.record.formula.functions.Column;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
@@ -21,7 +21,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Utils 
 {
-	private void cargarMatriz(String rutaAcceso,TipoMatriz tipoDeMatriz,RdP rdp) throws IOException 
+	static public void cargarMatriz(String rutaAcceso,TipoMatriz tipoDeMatriz,RdP rdp) throws IOException 
 	{
 		try 
 		{
@@ -31,12 +31,9 @@ public class Utils
 
 			XSSFSheet sheet = workbook.getSheetAt(0);//selecciono la hoja 0 del excel
 
-			Iterator<Row> rowIterator = sheet.iterator();
+			
 			Iterator<Row> rowIteratorAux = sheet.iterator();
 
-			// row es una fila
-			Row row;
-			Column columna;
 			 
 			Row rowAuxiliar;
 			int cantidadDeColumnas=0;
@@ -83,31 +80,28 @@ public class Utils
 				}
 			}
             
-            /*switch(tipoDeMatriz)
+            switch(tipoDeMatriz)
             {
             case MarcadoInicial:
-            	RdP.setMarcadoInicial=new Matriz(matriz.getMatriz());
+            	rdp.setMarcadoInicial(matriz);
             	break;
             case MarcadoActual:
-            	System.out.println("aca tenes el marcado actual");
-            	MarcadoActual=new Matriz(matriz.getMatriz());
+            	rdp.setMarcadoActual(matriz);
             	break;
             case MIncidencia:
-            	MIncidencia=new Matriz(matriz.getMatriz());
+            	rdp.setMatrizIncidencia(matriz);
             	break;
             case MInhibicion:
-            	MInhibicion=new Matriz(matriz.getMatriz());
+            	rdp.setMatrizInhibicion(matriz);
             	break;
             case MSensibilizadas: 
-            	MSensibilizadas=new Matriz(matriz.getMatriz());
-            	break;
+            	rdp.setSensibilizadas(matriz);break;
             case MDisparos:
-            	MDisparos=new Matriz(matriz.getMatriz());
+            	rdp.setMatrizDeDisparos(matriz);
             	break;
             case MIncidenciaPrevia:
-            	MIncidenciaPrevia=new Matriz(matriz.getMatriz());
-            	break;
-            }*/
+            	rdp.setMatrizIncidenciaPrevia(matriz);break;
+            }
 
 		}
 		// cerramos el libro excel
