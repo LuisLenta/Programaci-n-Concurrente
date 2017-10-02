@@ -25,7 +25,6 @@ public class Main
 	    new Proceso1A2(GdeMonitor);
 		*/
 		
-		System.out.println("te la chupo wuachin XDDD jajajaja");
 		RdP Red = new RdP();
 		/*
 	    Politicas politicas = new Politicas();
