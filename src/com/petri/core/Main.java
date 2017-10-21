@@ -26,6 +26,11 @@ public class Main
 		*/
 		
 		RdP Red = new RdP();
+		for(int i=0;i<6;i++)
+		{
+			Red.getMarcadoActual().getValor(0, i);
+		}
+		
 		/*
 	    Politicas politicas = new Politicas();
 		Colas cola = new Colas(20);
