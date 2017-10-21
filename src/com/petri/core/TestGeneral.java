@@ -10,8 +10,8 @@ import java.util.List;
 
 public class TestGeneral
 {
-	private ArrayList<Invariante> listaDeInvariantes;
-	private HashMap<String,Integer> tablaDePlazas;
+	private ArrayList<Invariante> listaDeInvariantes;//Tiene la lista de los invariantes de plazas
+	private HashMap<String,Integer> tablaDePlazas;//tiene el nombre de la plaza y el numero al cual corresponde
 	
 	
 	public TestGeneral() throws FileNotFoundException, IOException
@@ -19,9 +19,20 @@ public class TestGeneral
 		listaDeInvariantes = new ArrayList<Invariante>();
 		tablaDePlazas= new HashMap<String,Integer>();
 		inicializarTabla();
-		cargarInvariantes();
+		//cargarInvariantes();
+		
+		System.out.println("------------------------ACA TENES EL HASHMAP----------------------");
+		System.out.println(tablaDePlazas.size());
+		for(String item: tablaDePlazas.keySet())
+		{
+			System.out.println(item);
+		}
+		
+		System.out.println("Terminamos de imprimir el hashmap");
+		
 	}
 	
+	//inicializa la tabla de plazas poeniendo el nombre y asociandolo a indice
 	private void inicializarTabla() throws FileNotFoundException, IOException
 	{
 		/*
@@ -43,18 +54,26 @@ public class TestGeneral
         while((cadena = b.readLine())!=null) 
         {
         	cadena=cadena.trim();
-        	
+        	//System.out.println(cadena);
+        	//por alguna razon no me esta cargando ninguno de lso q dicen restringe... estan casi al ultimo 
         	if (cadena.contains("Marking"))semaforoFindMarking++;
-        	
+        	//if (semaforoFindMarking==1 && cadena.contains("Restringe")) System.out.println("ACA LO LEE PERO NO LO CARGA:  " +cadena);
         	if (semaforoFindMarking==1 && cadena.contains("odd")) semaforoFindMarking++;
         	
-        	if (semaforoFindMarking==1 && !(cadena.length()==0 || cadena.contains("td") || cadena.contains("tr") || cadena.contains("table") || cadena.contains("Marking")  )  )
+        	
+        	
+        	else if (semaforoFindMarking==1 && !(cadena.length()==0 || cadena.contains("<td") || cadena.contains("<tr") 
+        			
+        			||cadena.contains("</tr")|| cadena.contains("</td") || cadena.contains("</table")
+        			
+        			|| cadena.contains("table") || cadena.contains("Marking")  )  )
         	{
-        		System.out.println(cadena.trim());
+        		System.out.println(cadena);
         		this.tablaDePlazas.put(cadena,contador);
         		contador++;
         	}
         }
+        System.out.println("----------------------------------------Termianmos de cargar el hashmap ====>" + contador);
         b.close();
 	}
 	
@@ -84,7 +103,7 @@ public class TestGeneral
         	if (cadena.contains("P-Invariant equations"))semaforoFindMarking++;
         }
         b.close();
-        System.out.println(contador);
+        System.out.println("##########Aca tenes al contador papuuu: "+contador);
         String cadenaUnida=unirString(stringBuffer);
         
         String[] cadenasSpliteadas=cadenaUnida.replace("M(", "").replace("</h3>","").replace(")", "").split("<br>");
@@ -93,7 +112,7 @@ public class TestGeneral
         {
         	System.out.println(cadenasSpliteadas[i]);
         }*/
-        
+        //tiene un -3 xq los ultimos 3 renglones o estan vacios o tieen el tiempo qu tardo en procesar el pipe el calculo de invariates (las ecuaciones)
         for(int i=0; i<cadenasSpliteadas.length-3;i++)
         {
         	
@@ -131,21 +150,21 @@ public class TestGeneral
 	
 	public boolean testeoDeInvariantes(Matriz MarcadoActual)
 	{
-		boolean dioMal=false;
 		for(Invariante invariante: listaDeInvariantes)
 		{
 			int sumadorDelInvariante=0;
 			for(String nombreDeLaPlaza: invariante.getListaDePlazas())
 			{
 				int numeroDePlaza=tablaDePlazas.get(nombreDeLaPlaza);
+				
 				int valorActualDeLaPlaza=(int) MarcadoActual.getValor(0, numeroDePlaza);
 				sumadorDelInvariante= sumadorDelInvariante+valorActualDeLaPlaza;
 				if(sumadorDelInvariante>invariante.getResultadoInvarianteObligatorio())
-					return false;
+					return true;
 			}
 		}
 		
-		return dioMal;
+		return false;
 	}
 	
 	private String unirString(ArrayList<String> cadenas)

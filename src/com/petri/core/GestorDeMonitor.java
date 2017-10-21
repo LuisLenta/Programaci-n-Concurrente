@@ -1,5 +1,7 @@
 package com.petri.core;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.concurrent.Semaphore;
 
 public class GestorDeMonitor {
@@ -8,13 +10,15 @@ public class GestorDeMonitor {
 	private Colas Cola;
 	private Semaphore mutex;
 	private Politicas Politica;
+	private TestGeneral testDeInvariantes;
 	// Hay que hacerlo privado me parece! Para que nadie pueda entrar al
 	// constructor del Gestor de Monitor
 	// Para eso tendriamos que armar packages.
 	// Por ahora lo uso publico para hacer las pruebas
 	//En realidad hay que hacerlo privado para que cumpla Singleton
-	public GestorDeMonitor(RdP Red, Colas Cola, Politicas Politica) {
-
+	public GestorDeMonitor(RdP Red, Colas Cola, Politicas Politica) throws FileNotFoundException, IOException 
+	{
+		testDeInvariantes=new TestGeneral();
 		this.Red = Red;
 		this.Cola = Cola;
 		this.Politica = Politica;
@@ -22,7 +26,10 @@ public class GestorDeMonitor {
 
 	}
 
-	public void dispararTransicion(int transicion) throws InterruptedException {
+	public void dispararTransicion(int transicion) throws InterruptedException 
+	{
+		System.out.println("Paso el invariante: "+testDeInvariantes.testeoDeInvariantes(Red.getMarcadoActual()));
+		
 		
 		System.out.println("Hay otros hilos esperando A : " + mutex.getQueueLength());
 		mutex.acquire();
@@ -106,5 +113,8 @@ public class GestorDeMonitor {
 		//Aca termina
 		System.out.println("Yo hago release" + Thread.currentThread().getName());
 		mutex.release();
+		
+		
+		
 	}
 }

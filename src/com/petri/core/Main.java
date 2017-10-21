@@ -26,12 +26,8 @@ public class Main
 		*/
 		
 		RdP Red = new RdP();
-		for(int i=0;i<6;i++)
-		{
-			Red.getMarcadoActual().getValor(0, i);
-		}
 		
-		/*
+		
 	    Politicas politicas = new Politicas();
 		Colas cola = new Colas(20);
 		GestorDeMonitor GdeMonitor = new GestorDeMonitor(Red, cola, politicas);
@@ -51,7 +47,7 @@ public class Main
 		new Process2(robot2, maquina2,GdeMonitor);
 		new Process3(robot1, robot2, robot3, maquina3, maquina4, GdeMonitor);
 		new Process1A1 (robot1, robot2, robot3, maquina1, maquina2, GdeMonitor );
-		new Process1A2 (robot1, robot2, robot3, maquina3, maquina4, GdeMonitor);*/
+		new Process1A2 (robot1, robot2, robot3, maquina3, maquina4, GdeMonitor);
 	
 	}
 		

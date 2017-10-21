@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 public class Invariante 
 {
-	private String[] listaDePlazas;
-	private int resultado;
+	//listaDePlazas lo que tiene es el nombre de las palzas que en conjunto componen al invariante de la plaza
+	private String[] listaDePlazas;//contiene un string con el nombre de las plazas para buscar en el hashmap del test (lo hace el test)
+	private int resultado;//Es el valor qu tiene la sumatoria de los tokens de la "listaDePlazas"
 	
 	public Invariante(String[] listita, int resultadoTotal)
 	{
