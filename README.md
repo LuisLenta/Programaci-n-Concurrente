@@ -33,3 +33,6 @@ git push origin master ==> Reemplaza master por la rama a la que quieres enviar 
 
 
 https://git-scm.com/book/es/v1/Fundamentos-de-Git-Guardando-cambios-en-el-repositorio
+
+
+ahora q carajo le paso al branch LCDSM!!!
