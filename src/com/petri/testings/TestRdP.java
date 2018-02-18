@@ -15,7 +15,7 @@ public class TestRdP {
 	
 
 	@Test
-	public void testCargarMarcadoInicial() throws IOException 
+	public void testCargarMarcadoInicial() throws IOException, InterruptedException 
 	{
 		System.out.println("se inicio el test");
 		RdP rdp=new RdP();
@@ -27,7 +27,7 @@ public class TestRdP {
 	}
 	
 	@Test
-	public void testCargarMarcadoActual() throws IOException 
+	public void testCargarMarcadoActual() throws IOException, InterruptedException 
 	{
 		System.out.println("se inicio el test");
 		RdP rdp=new RdP();
@@ -39,7 +39,7 @@ public class TestRdP {
 	}
 	
 	@Test
-	public void testCargarMatrizInhibicion() throws IOException 
+	public void testCargarMatrizInhibicion() throws IOException, InterruptedException 
 	{
 		System.out.println("se inicio el test");
 		RdP rdp=new RdP();
@@ -52,7 +52,7 @@ public class TestRdP {
 
 	
 	@Test
-	public void testCargarMatrizIncidencia() throws IOException 
+	public void testCargarMatrizIncidencia() throws IOException, InterruptedException 
 	{
 		System.out.println("se inicio el test");
 		RdP rdp=new RdP();
@@ -64,7 +64,7 @@ public class TestRdP {
 	}
 	
 	@Test
-	public void testCargarMatrizIncidenciaPrevia() throws IOException 
+	public void testCargarMatrizIncidenciaPrevia() throws IOException, InterruptedException 
 	{
 		System.out.println("se inicio el test");
 		RdP rdp=new RdP();

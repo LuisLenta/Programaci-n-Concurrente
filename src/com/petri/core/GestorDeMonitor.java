@@ -16,15 +16,19 @@ public class GestorDeMonitor {
 	// Para eso tendriamos que armar packages.
 	// Por ahora lo uso publico para hacer las pruebas
 	//En realidad hay que hacerlo privado para que cumpla Singleton
-	public GestorDeMonitor(RdP Red, Colas Cola, Politicas Politica) throws FileNotFoundException, IOException 
+	public GestorDeMonitor(RdP Red, Colas Cola, Politicas Politica) throws FileNotFoundException, IOException, InterruptedException 
 	{
 		testDeInvariantes=new TestGeneral();
 		this.Red = Red;
 		this.Cola = Cola;
 		this.Politica = Politica;
 		mutex = new Semaphore(1, true);
+		//testeoTInvariantes();
+		
 
 	}
+	
+	
 
 	public void dispararTransicion(int transicion) throws InterruptedException 
 	{
@@ -67,40 +71,7 @@ public class GestorDeMonitor {
 		System.out.println("Es cero" + m.esCero());
 		
 		
-		  //Aca estaba mutex.release();
-		
-		
-		/*
-		if (!m.esCero()) { // Tengo que hacer andar las politicas, porque asi,
-							// se me arma lio cuando un hilo esta haciendo el
-							// for para ver cual desencola, otro hilo intenta
-							// hacer lo mismo, y me descontrola el for
 
-			int aux = 0;
-			System.out.println("Politica ");
-			Cola.quienesEstan().imprimir();
-			//Fijarse que puede pasar que cuando llame a la politica, la politica me diga que tengo ciertas transiciones para disparar
-			//que no necesariamente van a coincidir con los hilos en la cola, controlar eso.
-			for (int j = 0; j < Red.getSensibilizadas().getColCount(); j++) {
-
-				if ((Red.getSensibilizadas().getValor(0, j)) == 1 && (Cola.quienesEstan().getValor(0, j) == 1)) {
-					System.out.println("Sensibilizada " + Red.getSensibilizadas().getValor(0, j));
-					System.out.println("En cola " + Cola.quienesEstan().getValor(0, j));
-					aux = j + 1;
-					break;
-				}
-			}
-			// Lo pongo para solucionar el problema de cuando un hilo se desencola,  y entra otro distinto al monitor.
-			// ya que le gana en agarrar el mutex.
-			
-			if(aux != 0){   
-			System.out.println("Desencolo " + aux);
-			Cola.desencolar(aux);
-			}
-		
-		}
-		*/
-		//Aca empieza lo nuevo
 		if (!m.esCero()) {
 			
 			int aux = 0;

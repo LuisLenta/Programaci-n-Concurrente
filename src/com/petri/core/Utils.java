@@ -101,6 +101,8 @@ public class Utils
             	break;
             case MIncidenciaPrevia:
             	rdp.setMatrizIncidenciaPrevia(matriz);break;
+            case MTInvariantes:
+            	rdp.setMatrizTInvariantes(matriz);break;
             }
 
 		}

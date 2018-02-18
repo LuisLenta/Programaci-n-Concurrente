@@ -14,12 +14,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class RdP {
 //tipos de matrices 0, 1,2,3,4,5,6
 	private Matriz MarcadoInicial, MarcadoActual, MIncidencia, MInhibicion, MSensibilizadas, MDisparos,
-			MIncidenciaPrevia;
+			MIncidenciaPrevia,MTInvariantes;
 	
 	//private int piezasA=0, piezasB=0, piezasC=0;
 	
 
-	public RdP() throws IOException {
+	public RdP() throws IOException, InterruptedException {
 		//System.out.println("asD aSD asd");
 		String basePath="/home/scoles/Escritorio/Matrices/";//modificas la base (en funcion de la pc y se acabo)
 		
@@ -29,6 +29,7 @@ public class RdP {
 		String rutaMInhibicion =basePath + "Inhibicion.xlsx";
 		String rutaMIncidencia = basePath + "Incidencia.xlsx";
 		String rutaMIncidenciaPrevia = basePath + "IncidenciaPrevia.xlsx";
+		String rutaTInvariantes=basePath+"TInvariantes.xlsx";
 		
 		
 		Utils.cargarMatriz(rutaMarcadoInicial,TipoMatriz.MarcadoInicial,this);
@@ -46,6 +47,8 @@ public class RdP {
 		
 		Utils.cargarMatriz(rutaMIncidenciaPrevia,TipoMatriz.MIncidenciaPrevia,this);
 		//cargarMIncidenciaPrevia(rutaMIncidenciaPrevia);
+		
+		Utils.cargarMatriz(rutaTInvariantes,TipoMatriz.MTInvariantes,this);
 		
 
 		
@@ -67,6 +70,7 @@ public class RdP {
 		// LLamo a calcularSensibilizadas para actualizar el vector de
 		// sensibilizadas una vez que cargue la red
 		calcularSensibilizadas();
+		this.testeoTInvariantes();
 
 	}
 	
@@ -137,6 +141,10 @@ public class RdP {
 	{
 		MDisparos=matriz;
 	}
+	public void setMatrizTInvariantes(Matriz matriz)
+	{
+		MTInvariantes=matriz;
+	}
 	
 	
 	
@@ -164,6 +172,7 @@ public class RdP {
 	}
 
 	// Dispara una transicion
+	//OJO que le restan 1 al indice aca... en el metodo de Tinvariantes tuve que sumarle 1 al partametro pasadao por indice... :P
 	public boolean disparar(int transicion) {
 
 		if (transicion <= MIncidencia.getCantidadDeColumnas() || transicion > 0) {
@@ -192,6 +201,74 @@ public class RdP {
 
 		// else throw new RuntimeException("Transicion Incorrecta");
 	}
+	
+	private void testeoTInvariantes() throws InterruptedException
+	{
+		boolean bandera=false;
+		System.out.println("Imprimimos el 1ro");
+		this.getTInvariantes().imprimir();
+		System.out.println("Imprimimos las sensibilizadas ahora");
+		this.getSensibilizadas().imprimir();
+		for(int i=0; i<this.getTInvariantes().getMatriz().length ;i++)
+		{
+			while(bandera==false)
+			{
+				for(int j=0; j<this.getTInvariantes().getMatriz()[0].length;j++)
+				{
+					if(this.getSensibilizadas().getMatriz()[0][j]>=1)
+					{
+						if(this.getTInvariantes().getMatriz()[i][j]>=1)
+						{
+							this.disparar(j+1);
+							//this.calcularSensibilizadas();
+							this.getTInvariantes().getMatriz()[i][j]=0;
+							System.out.println("Imprimimos el del bucle");
+							this.getTInvariantes().imprimir();
+							System.out.println("Imprimimos las sensibilizadas ahora");
+							this.getSensibilizadas().imprimir();
+							
+						}
+					}
+					
+				}
+				int contador=0;
+				for(int z=0; z<this.getTInvariantes().getMatriz()[0].length;z++)
+				{
+					contador=contador+this.getTInvariantes().getMatriz()[i][z];
+				}
+				if(contador==0)
+				{
+					bandera=true;
+				}
+			}
+			bandera=false;
+		}
+		
+		int contador=0;
+		for(int i=0; i<this.getMarcadoActual().getMatriz().length;i++)
+		{
+			for (int j=0; j<this.getMarcadoActual().getMatriz()[0].length;j++)
+			{
+				if(this.getMarcadoActual().getMatriz()[i][j]==
+						this.getMarcadoInicial().getMatriz()[i][j])
+				{}
+				else {contador++;break;}
+			}
+		}
+		
+		if(contador==0)
+		{
+			System.out.println("ESTA BIEN LA COMPARASION");
+		}
+		else
+		{
+			System.out.println("SE PUDRIO TODOO XD ");
+		}
+	}
+	
+	
+	
+	
     /*
      *  Calcula las sensibilizadas usando la matriz Incidencia previa I-, la cual
      *  es multiplicada por una matriz que representa los disparos de cada una de las transiciones.
@@ -207,11 +284,14 @@ public class RdP {
 
 		aux = MIncidenciaPrevia.mmult(MDisparos);
 
-		for (int i = 0; i < aux.getCantidadDeColumnas(); i++) {
+		for (int i = 0; i < aux.getCantidadDeColumnas(); i++) 
+		{
 			boolean bandera = true;
-			for (int j = 0; j < aux.getCantidadDeFilas(); j++) {
+			for (int j = 0; j < aux.getCantidadDeFilas(); j++) 
+			{
 
-				if (Math.abs((int) MarcadoActual.getValor(0, j)) < Math.abs((int) aux.getValor(j, i))) {
+				if (Math.abs((int) MarcadoActual.getValor(0, j)) < Math.abs((int) aux.getValor(j, i))) 
+				{
 					bandera = false;
 					break;
 				}
@@ -225,6 +305,13 @@ public class RdP {
 
 		}
 	}
+	
+	public Matriz getTInvariantes()
+	{
+		return MTInvariantes;
+	}
+	
+	
 
 	
 }
