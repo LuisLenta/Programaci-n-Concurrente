@@ -9,10 +9,6 @@ public class Main
 	public static void main(String[] args) throws IOException, InterruptedException
 	{
 		
-		System.out.println("el system time es de... : " + System.currentTimeMillis());
-		System.out.println("el system time es de... : " + System.currentTimeMillis());
-		//que paso aca
-	   
 		/*
 		RdP Red = new RdP();
 		Colas Cola = new Colas(20);

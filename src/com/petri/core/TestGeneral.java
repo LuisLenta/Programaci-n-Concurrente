@@ -160,11 +160,11 @@ public class TestGeneral
 				int valorActualDeLaPlaza=(int) MarcadoActual.getValor(0, numeroDePlaza);
 				sumadorDelInvariante= sumadorDelInvariante+valorActualDeLaPlaza;
 				if(sumadorDelInvariante>invariante.getResultadoInvarianteObligatorio())
-					return true;
+					return false;
 			}
 		}
 		
-		return false;
+		return true;
 	}
 	
 	private String unirString(ArrayList<String> cadenas)

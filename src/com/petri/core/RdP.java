@@ -32,6 +32,8 @@ public class RdP {
 		for(int i=0;i < timeStampDeLasTransicionesCuandoSeSensibilizaron.length;i++) {timeStampDeLasTransicionesCuandoSeSensibilizaron[i]=0;}
 		for(int i=0;i < sensibilizadasAnteriores.length;i++) {sensibilizadasAnteriores[i]=0;}
 		
+		
+		
 		String rutaMarcadoInicial =basePath + "MarcadoInicial.xlsx"; 
 		String rutaMarcadoActual = basePath + "MarcadoActual.xlsx";
 		String rutaMInhibicion =basePath + "Inhibicion.xlsx";
@@ -76,11 +78,15 @@ public class RdP {
 					MDisparos.setValor(i, j, 0);
 			}
 		}
+		
+		
 
 		// LLamo a calcularSensibilizadas para actualizar el vector de
 		// sensibilizadas una vez que cargue la red
 		calcularSensibilizadas();
+		
 		this.testeoTInvariantes();
+		
 
 	}
 	
@@ -203,36 +209,109 @@ public class RdP {
 		} else
 			throw new RuntimeException("Transicion Incorrecta");
 	}
-
-	// Dispara una transicion
-	//OJO que le restan 1 al indice aca... en el metodo de Tinvariantes tuve que sumarle 1 al partametro pasadao por indice... :P
-	public boolean disparar(int transicion) {
-
-		if (transicion <= MIncidencia.getCantidadDeColumnas() || transicion > 0) {
-			// Verifica si se puede disparar. Si se puede, se dispara, y
-			// devuelve un true para avisar que si se disparo.
-			if ((int) MSensibilizadas.getValor(0, transicion - 1) == 1) {
-				// No le pongo transicion-1 porque lo hace crearVectorDisparo()
-
-				Matriz VDisparo = crearVectorDisparo(transicion);
-				MarcadoActual.sumar(MIncidencia.mmult(VDisparo).transpuesta());      //Mi+1  = M0 + I*D
-				calcularSensibilizadas();
-				System.out.println("Se Disparo la transicion " + transicion);
-				//Llevo la cuenta de cuantas piezas se hicieron para las politicas
-				/*if(transicion == 17){ this.agregarPiezaA();}
-				if(transicion == 10){ this.agregarPiezaB();}
-				if(transicion == 3){ this.agregarPiezaC();}
-				
-				
-				System.out.println("Cantidad de Piezas A: " + this.getPiezasA() );
-				System.out.println("Cantidad de Piezas B: " + this.getPiezasB() );
-				System.out.println("Cantidad de Piezas C: " + this.getPiezasC() );*/
-				return true;
+	
+	private boolean sensibilizadaPorTiempo(int transicion)
+	{
+		/*transicion=transicion-1;//hay que ponerlo si o si por como trabaja el programa en gral
+		for(int i=0; i<20;i++) {this.getSensibilizadasAnteriores()[i]=this.getSensibilizadas().getMatriz()[0][i];}
+		//esto es para sensibilizar en funcion del tiempo
+		//this.calcularSensibilizadas();
+		
+		
+		//for(int i=0; i<20;i++)
+		//{	
+		int j=transicion;
+		System.out.println("Sensibilizadas anteriores");for(int i=0;i<20;i++){System.out.print(this.getSensibilizadasAnteriores()[i]+" ");}System.out.println("");
+		this.getSensibilizadas().imprimir();
+			if(this.getTimeDeLasTransiciones()[transicion]!=0)
+			{
+				if(this.getSensibilizadasAnteriores()[j]>this.getSensibilizadas().getMatriz()[0][j])//si es menor.. es cero la anterior y la nueva es uno
+				{
+					this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[j]=-1;//si es menos 1 quiere decir que nunk tuvo tiempos por ende nunk pudo haber estado sensibilizada por tiempo
+				}
+				else if (this.getSensibilizadasAnteriores()[j]<this.getSensibilizadas().getMatriz()[0][j])//si la anterior es cero y la nueva es uno
+				{
+					this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[j]=System.currentTimeMillis();
+				}
+				else {}//no hago nada.. en realidad al pepe esta esto pero bueno.... no me gusta romper a veces las estructuras 
+				//en definitiva este4 else encerraria que no hubo cambios por ende queda todo talcual
+			}
+		//}
+		
+		//System.out.println("terminamos el calculo de lso tiempos");
+		if(this.getTimeDeLasTransiciones()[transicion]==0 && this.getSensibilizadas().getMatriz()[0][transicion]==1)//si es 0 el time base de las transiciones se dispara de cajon
+		{
+			System.out.println("Es isntantanea");
+			return true;
+		}
+		else if(this.getTimeDeLasTransiciones()[transicion]!=0 && 
+				this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]!=-1  && 
+				this.getSensibilizadas().getMatriz()[0][transicion]==1)//aca abarcariamos si es >0 en realidad
+		{
+			System.out.println("esta sensibilizada por token?: "+this.getSensibilizadas().getMatriz()[0][transicion]);
+			System.out.println(System.currentTimeMillis());
+			System.out.println(this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]);
+			System.out.println("Para saber si es instantanea o no: "+this.getTimeDeLasTransiciones()[transicion]);
+			System.out.println(System.currentTimeMillis()-this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]);
+			if(this.getTimeDeLasTransiciones()[transicion]>System.currentTimeMillis()-this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion])
+			{
+			  this.getSensibilizadas().getMatriz()[0][transicion]=1;
+			  return true;
 			}
 		}
+		//System.out.println("Nos mandaron al diablo ");
+		this.getSensibilizadas().getMatriz()[0][transicion]=0;
+		return false;*/
+		return true;
+		
+	}
+	
+	// Dispara una transicion
+	//OJO que le restan 1 al indice aca... en el metodo de Tinvariantes tuve que sumarle 1 al partametro pasadao por indice... :P
+	public boolean disparar(int transicion) 
+	{
+		
+			if (transicion <= MIncidencia.getCantidadDeColumnas() || transicion > 0) 
+			{
+				// Verifica si se puede disparar. Si se puede, se dispara, y
+				// devuelve un true para avisar que si se disparo.
+				if ((int) MSensibilizadas.getValor(0, transicion - 1) == 1) 
+				{
+					// No le pongo transicion-1 porque lo hace crearVectorDisparo()
+					if(this.sensibilizadaPorTiempo(transicion)==true)
+					{
+					Matriz VDisparo = crearVectorDisparo(transicion);
+					MarcadoActual.sumar(MIncidencia.mmult(VDisparo).transpuesta());      //Mi+1  = M0 + I*D
+					calcularSensibilizadas();
+					System.out.println("Se Disparo la transicion " + transicion);
+					
+					return true;
+					}
+				}
+			}
+		
 		return false;
 
 		// else throw new RuntimeException("Transicion Incorrecta");
+	}
+	
+	public boolean dispararParaTInvariantes(int transicion) 
+	{
+		
+			if (transicion <= MIncidencia.getCantidadDeColumnas() || transicion > 0) 
+			{
+				// Verifica si se puede disparar. Si se puede, se dispara, y
+				// devuelve un true para avisar que si se disparo.
+				if ((int) MSensibilizadas.getValor(0, transicion - 1) == 1) 
+				{
+					Matriz VDisparo = crearVectorDisparo(transicion);
+					MarcadoActual.sumar(MIncidencia.mmult(VDisparo).transpuesta());      //Mi+1  = M0 + I*D
+					calcularSensibilizadas();
+					//System.out.println("Se Disparo la transicion " + transicion);
+					return true;
+				}
+			}
+		return false;
 	}
 	
 	private void testeoTInvariantes() throws InterruptedException
@@ -252,7 +331,7 @@ public class RdP {
 					{
 						if(this.getTInvariantes().getMatriz()[i][j]>=1)
 						{
-							this.disparar(j+1);
+							this.dispararParaTInvariantes(j+1);
 							//this.calcularSensibilizadas();
 							this.getTInvariantes().getMatriz()[i][j]=0;
 							System.out.println("Imprimimos el del bucle");
@@ -291,7 +370,7 @@ public class RdP {
 		
 		if(contador==0)
 		{
-			System.out.println("ESTA BIEN LA COMPARASION");
+			System.out.println("ESTAN BIEN LOS T INVARIANTES");
 		}
 		else
 		{
@@ -312,7 +391,8 @@ public class RdP {
      */
     
 	public void calcularSensibilizadas() {
-
+		for(int i=0; i<20;i++) {this.getSensibilizadasAnteriores()[i]=this.getSensibilizadas().getMatriz()[0][i];}
+		//this.getSensibilizadas().imprimir();
 		Matriz aux = new Matriz(MIncidenciaPrevia.getCantidadDeFilas(), MDisparos.getCantidadDeColumnas());
 
 		aux = MIncidenciaPrevia.mmult(MDisparos);
