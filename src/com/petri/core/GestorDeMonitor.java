@@ -28,10 +28,62 @@ public class GestorDeMonitor {
 
 	}
 	
+	public boolean sensibilizadaPorTiempo(int transicion)
+	{
+		//long timepoDelSistema=System.currentTimeMillis();
+		
+		//esto es para sensibilizar en funcion del tiempo
+		
+		for(int i=0; i<20;i++)
+		{
+			if(Red.getSensibilizadasAnteriores()[i]<Red.getSensibilizadas().getMatriz()[0][i])//si es menor.. es cero la anterior y la nueva es uno
+			{
+				Red.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[i]=-1;//si es menos 1 quiere decir que nunk tuvo tiempos por ende nunk pudo haber estado sensibilizada por tiempo
+			}
+			else if (Red.getSensibilizadasAnteriores()[i]>Red.getSensibilizadas().getMatriz()[0][i])//si la anterior es cero y la nueva es uno
+			{
+				Red.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[i]=System.currentTimeMillis();
+			}
+			else {}//no hago nada.. en realidad al pepe esta esto pero bueno.... no me gusta romper a veces las estructuras 
+			//en definitiva este4 else encerraria que no hubo cambios por ende queda todo talcual
+			
+			if(Red.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]==0)
+			{
+				//la disparas a la transicion
+			}
+			else if(Red.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]!=-1)
+			{
+				if(System.currentTimeMillis()-Red.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]<=Red.getTimeDeLasTransiciones()[transicion])
+				{
+				  return true;
+				}
+			}
+			
+		}
+		
+		return false;
+	}
 	
 
 	public void dispararTransicion(int transicion) throws InterruptedException 
 	{
+		
+		/*
+		 * obtengo... una 
+		 * 
+		 * getSensibilizadasPorTokens
+		 * getSensibilizadasPorTiempo
+		 * getSensibilizadasTotal
+		 */
+		
+		/*
+		 * otra forma...
+		 * me mandan la transicion a disparar y lo que yo debo de hacer es... verificar que este sensibilizada por tokens.. y dsps de manera temporall
+		 * cuando una transicion se sensibiliza por 1ra vez se le pone el tiempo.. para ello necesito 2 matrices... una de sensibilizadas anterior y otra 
+		 * que seria la sensibilizada actual
+		 * 
+		 */
+		
 		System.out.println("Paso el invariante: "+testDeInvariantes.testeoDeInvariantes(Red.getMarcadoActual()));
 		
 		
@@ -41,7 +93,7 @@ public class GestorDeMonitor {
 		Red.getSensibilizadas().imprimir();
 		System.out.println("Intento Disparar " + transicion);
 
-		while (!Red.disparar(transicion)) {
+		while (!Red.disparar(transicion)) {//si se puede disparar la transicion nos devuelve true
 
 			mutex.release();
 			System.out.println("Encole " + transicion + "  "+ Thread.currentThread().getName());

@@ -16,13 +16,21 @@ public class RdP {
 	private Matriz MarcadoInicial, MarcadoActual, MIncidencia, MInhibicion, MSensibilizadas, MDisparos,
 			MIncidenciaPrevia,MTInvariantes;
 	
+	private long[] timeStampDeLasTransicionesCuandoSeSensibilizaron=new long[20];
+	private int[] sensibilizadasAnteriores=new int[20];
+	private long[] timeDeLasTransiciones=new long[20];
+	
 	//private int piezasA=0, piezasB=0, piezasC=0;
 	
+	
 
-	public RdP() throws IOException, InterruptedException {
+	public RdP() throws IOException, InterruptedException 
+	{
 		//System.out.println("asD aSD asd");
 		String basePath="/home/scoles/Escritorio/Matrices/";//modificas la base (en funcion de la pc y se acabo)
 		
+		for(int i=0;i < timeStampDeLasTransicionesCuandoSeSensibilizaron.length;i++) {timeStampDeLasTransicionesCuandoSeSensibilizaron[i]=0;}
+		for(int i=0;i < sensibilizadasAnteriores.length;i++) {sensibilizadasAnteriores[i]=0;}
 		
 		String rutaMarcadoInicial =basePath + "MarcadoInicial.xlsx"; 
 		String rutaMarcadoActual = basePath + "MarcadoActual.xlsx";
@@ -30,6 +38,7 @@ public class RdP {
 		String rutaMIncidencia = basePath + "Incidencia.xlsx";
 		String rutaMIncidenciaPrevia = basePath + "IncidenciaPrevia.xlsx";
 		String rutaTInvariantes=basePath+"TInvariantes.xlsx";
+		String rutaTiempoDeLasTransiciones=basePath+"TiempoDeLasTransiciones.xlsx";
 		
 		
 		Utils.cargarMatriz(rutaMarcadoInicial,TipoMatriz.MarcadoInicial,this);
@@ -50,6 +59,7 @@ public class RdP {
 		
 		Utils.cargarMatriz(rutaTInvariantes,TipoMatriz.MTInvariantes,this);
 		
+		Utils.cargarMatriz(rutaTiempoDeLasTransiciones,TipoMatriz.MTiempoDeLasTansiciones,this);
 
 		
 		
@@ -74,8 +84,31 @@ public class RdP {
 
 	}
 	
+	public void setTiempoDeLasTransiciones(Matriz matriz)
+	{
+		long[] matrizLista=new long[20];
+		for(int i=0;i<matriz.getMatriz().length;i++)
+		{
+			matrizLista[i]=matriz.getMatriz()[0][i];
+		}
+		this.timeDeLasTransiciones=matrizLista;
+	}
 	
-
+	public long[] getTimeDeLasTransiciones() 
+	{
+		return this.timeDeLasTransiciones;
+	}
+	
+	public int[] getSensibilizadasAnteriores()
+	{
+		return this.sensibilizadasAnteriores;
+		
+	}
+	
+	public long[] getTimeStampDeLasTransicionesCuandoSeSensibilizaron()
+	{
+		return this.timeStampDeLasTransicionesCuandoSeSensibilizaron;
+	}
 	public Matriz getMarcadoInicial() {
 		return MarcadoInicial;
 	}

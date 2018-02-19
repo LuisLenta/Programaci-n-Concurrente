@@ -103,6 +103,10 @@ public class Utils
             	rdp.setMatrizIncidenciaPrevia(matriz);break;
             case MTInvariantes:
             	rdp.setMatrizTInvariantes(matriz);break;
+            case MTiempoDeLasTansiciones:
+            	rdp.setTiempoDeLasTransiciones(matriz);break;
+            default:
+            	System.out.println("No se pudo cargar alguna matriz CUIDADO!!!");
             }
 
 		}

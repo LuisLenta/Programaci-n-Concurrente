@@ -9,6 +9,8 @@ public class Main
 	public static void main(String[] args) throws IOException, InterruptedException
 	{
 		
+		System.out.println("el system time es de... : " + System.currentTimeMillis());
+		System.out.println("el system time es de... : " + System.currentTimeMillis());
 		//que paso aca
 	   
 		/*
@@ -24,7 +26,6 @@ public class Main
 	    new Proceso3 (GdeMonitor);
 	    new Proceso1A2(GdeMonitor);
 		*/
-		
 		RdP Red = new RdP();
 		
 		System.out.println("los T invariantes tienen... tantas filas:  "+Red.getTInvariantes().getMatriz().length );
