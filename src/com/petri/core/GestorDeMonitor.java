@@ -58,9 +58,9 @@ public class GestorDeMonitor {
 		if(transicion == 3){ Politica.agregarPiezaC(); }
 		
 		//para descomentar
-		//System.out.println("Cantidad de piezas A: " + Politica.getPiezasA());
-		//System.out.println("Cantidad de piezas B: " + Politica.getPiezasB());
-		//System.out.println("Cantidad de piezas C: " + Politica.getPiezasC());
+		System.out.println("Cantidad de piezas A: " + Politica.getPiezasA());
+		System.out.println("Cantidad de piezas B: " + Politica.getPiezasB());
+		System.out.println("Cantidad de piezas C: " + Politica.getPiezasC());
 		
 		Matriz vs = Red.getSensibilizadas();
 

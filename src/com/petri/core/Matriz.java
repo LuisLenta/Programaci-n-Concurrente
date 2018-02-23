@@ -3,12 +3,15 @@ package com.petri.core;
 public class Matriz {
 
 	public int matriz[][];//la matriz
+	public String nombreDeLaMatriz;
 	
 	/*
 	 * Construye una matriz vacia con el tamaño especificado
 	 */
-	public Matriz(int filas, int columnas) {
+	public Matriz(int filas, int columnas/*, String nombreDeLaMatriz*/) 
+	{
 		this.matriz = new int[filas][columnas];
+		//this.nombreDeLaMatriz=nombreDeLaMatriz
 	}
 
 	/*
@@ -107,8 +110,6 @@ public class Matriz {
 	public void imprimir() {
 		// Imprimimos matriz
 		System.out.println("Imprimimos la matriz");
-		System.out.println("");
-	
 
 		for (int aux = 0; aux < this.getCantidadDeFilas(); aux++) {
 			for (int aux1 = 0; aux1 < this.getCantidadDeColumnas(); aux1++) {

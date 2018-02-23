@@ -56,6 +56,7 @@ public class RdP {
 		Utils.cargarMatriz(rutaMIncidencia, TipoMatriz.MIncidencia,this);
 		//cargarMIncidencia(rutaMIncidencia);
 		
+		
 		Utils.cargarMatriz(rutaMIncidenciaPrevia,TipoMatriz.MIncidenciaPrevia,this);
 		//cargarMIncidenciaPrevia(rutaMIncidenciaPrevia);
 		
@@ -85,7 +86,17 @@ public class RdP {
 		// sensibilizadas una vez que cargue la red
 		calcularSensibilizadas();
 		
+		System.out.println("EN EL CONSTRUCTORRRRRRRRRRRRRRRRRRRR");
+		System.out.println("Betas de las transiciones: ");for (int i=0; i<this.getTimeDeLasTransiciones().length;i++){System.out.print(this.getTimeDeLasTransiciones()[i]+" ");}System.out.println();
+		
+		System.out.println("Sensibilizadas anteriores");for(int i=0;i<20;i++){System.out.print(this.getSensibilizadasAnteriores()[i]+" ");}System.out.println("");
+		this.getSensibilizadas().imprimir();
+		
+		System.out.println("EL vector de TS es: ");for (int i=0; i<this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron().length;i++){System.out.print(this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[i]+" ");}System.out.println();
+		
 		this.testeoTInvariantes();
+		
+		
 		
 
 	}
@@ -93,7 +104,7 @@ public class RdP {
 	public void setTiempoDeLasTransiciones(Matriz matriz)
 	{
 		long[] matrizLista=new long[20];
-		for(int i=0;i<matriz.getMatriz().length;i++)
+		for(int i=0;i<matriz.getMatriz()[0].length;i++)
 		{
 			matrizLista[i]=matriz.getMatriz()[0][i];
 		}
@@ -212,58 +223,22 @@ public class RdP {
 	
 	private boolean sensibilizadaPorTiempo(int transicion)
 	{
-		/*transicion=transicion-1;//hay que ponerlo si o si por como trabaja el programa en gral
-		for(int i=0; i<20;i++) {this.getSensibilizadasAnteriores()[i]=this.getSensibilizadas().getMatriz()[0][i];}
-		//esto es para sensibilizar en funcion del tiempo
-		//this.calcularSensibilizadas();
-		
-		
-		//for(int i=0; i<20;i++)
-		//{	
-		int j=transicion;
-		System.out.println("Sensibilizadas anteriores");for(int i=0;i<20;i++){System.out.print(this.getSensibilizadasAnteriores()[i]+" ");}System.out.println("");
-		this.getSensibilizadas().imprimir();
-			if(this.getTimeDeLasTransiciones()[transicion]!=0)
-			{
-				if(this.getSensibilizadasAnteriores()[j]>this.getSensibilizadas().getMatriz()[0][j])//si es menor.. es cero la anterior y la nueva es uno
-				{
-					this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[j]=-1;//si es menos 1 quiere decir que nunk tuvo tiempos por ende nunk pudo haber estado sensibilizada por tiempo
-				}
-				else if (this.getSensibilizadasAnteriores()[j]<this.getSensibilizadas().getMatriz()[0][j])//si la anterior es cero y la nueva es uno
-				{
-					this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[j]=System.currentTimeMillis();
-				}
-				else {}//no hago nada.. en realidad al pepe esta esto pero bueno.... no me gusta romper a veces las estructuras 
-				//en definitiva este4 else encerraria que no hubo cambios por ende queda todo talcual
-			}
-		//}
-		
-		//System.out.println("terminamos el calculo de lso tiempos");
-		if(this.getTimeDeLasTransiciones()[transicion]==0 && this.getSensibilizadas().getMatriz()[0][transicion]==1)//si es 0 el time base de las transiciones se dispara de cajon
+		transicion=transicion-1;
+		if(this.getTimeDeLasTransiciones()[transicion]==0)
 		{
-			System.out.println("Es isntantanea");
 			return true;
 		}
-		else if(this.getTimeDeLasTransiciones()[transicion]!=0 && 
-				this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]!=-1  && 
-				this.getSensibilizadas().getMatriz()[0][transicion]==1)//aca abarcariamos si es >0 en realidad
+		else if(System.nanoTime()-this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]<this.getTimeDeLasTransiciones()[transicion])
 		{
-			System.out.println("esta sensibilizada por token?: "+this.getSensibilizadas().getMatriz()[0][transicion]);
-			System.out.println(System.currentTimeMillis());
-			System.out.println(this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]);
-			System.out.println("Para saber si es instantanea o no: "+this.getTimeDeLasTransiciones()[transicion]);
-			System.out.println(System.currentTimeMillis()-this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]);
-			if(this.getTimeDeLasTransiciones()[transicion]>System.currentTimeMillis()-this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion])
-			{
-			  this.getSensibilizadas().getMatriz()[0][transicion]=1;
-			  return true;
-			}
+			System.out.println("El tiempo calculado es de: "+(System.nanoTime()-this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]));
+			System.out.println("Los valores obtenidos son: "+System.nanoTime()+" "+this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]);
+			System.out.println("La ventana es de: "+this.getTimeDeLasTransiciones()[transicion]);
+			return true;
 		}
-		//System.out.println("Nos mandaron al diablo ");
-		this.getSensibilizadas().getMatriz()[0][transicion]=0;
-		return false;*/
-		return true;
-		
+		else
+		{
+			return false;
+		}
 	}
 	
 	// Dispara una transicion
@@ -280,12 +255,12 @@ public class RdP {
 					// No le pongo transicion-1 porque lo hace crearVectorDisparo()
 					if(this.sensibilizadaPorTiempo(transicion)==true)
 					{
-					Matriz VDisparo = crearVectorDisparo(transicion);
-					MarcadoActual.sumar(MIncidencia.mmult(VDisparo).transpuesta());      //Mi+1  = M0 + I*D
-					calcularSensibilizadas();
-					System.out.println("Se Disparo la transicion " + transicion);
-					
-					return true;
+						Matriz VDisparo = crearVectorDisparo(transicion);
+						MarcadoActual.sumar(MIncidencia.mmult(VDisparo).transpuesta());      //Mi+1  = M0 + I*D
+						calcularSensibilizadas();
+						System.out.println("Se Disparo la transicion " + transicion);
+						
+						return true;
 					}
 				}
 			}
@@ -392,6 +367,7 @@ public class RdP {
     
 	public void calcularSensibilizadas() {
 		for(int i=0; i<20;i++) {this.getSensibilizadasAnteriores()[i]=this.getSensibilizadas().getMatriz()[0][i];}
+		
 		//this.getSensibilizadas().imprimir();
 		Matriz aux = new Matriz(MIncidenciaPrevia.getCantidadDeFilas(), MDisparos.getCantidadDeColumnas());
 
@@ -417,6 +393,33 @@ public class RdP {
 				MSensibilizadas.setValor(0, i, 0);
 
 		}
+		//1ro calculas la matriz de sensibilizadas anterior... 
+		//2do calculas la nueva matriz de sensibilizadas....
+		//3ro ponemos los timeStamp
+		//#######comienzan los timeStamp
+		
+		for(int i=0; i<this.getTimeDeLasTransiciones().length;i++)
+		{
+			if(this.getTimeDeLasTransiciones()[i]!=0 && this.getSensibilizadasAnteriores()[i]<this.getSensibilizadas().getMatriz()[0][i])
+			{
+				this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[i]=System.nanoTime();
+			}
+			else if(this.getTimeDeLasTransiciones()[i]!=0 && this.getSensibilizadasAnteriores()[i]>this.getSensibilizadas().getMatriz()[0][i])
+			{
+				this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[i]=0;
+			}
+		}	
+		
+		System.out.println("Luego de calcular las sensibilizadas");
+		System.out.println("Betas de las transiciones: ");for (int i=0; i<this.getTimeDeLasTransiciones().length;i++){System.out.print(this.getTimeDeLasTransiciones()[i]+" ");}System.out.println();
+		
+		System.out.println("Sensibilizadas anteriores");for(int i=0;i<20;i++){System.out.print(this.getSensibilizadasAnteriores()[i]+" ");}System.out.println("");
+		this.getSensibilizadas().imprimir();
+		
+		
+		
+		System.out.println("EL vector de TS del sistema es de: ");for (int i=0; i<this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron().length;i++){System.out.print(this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[i]+" ");}System.out.println();
+		System.out.println();System.out.println();
 	}
 	
 	public Matriz getTInvariantes()
