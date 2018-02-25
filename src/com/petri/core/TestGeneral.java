@@ -160,10 +160,13 @@ public class TestGeneral
 				int valorActualDeLaPlaza=(int) MarcadoActual.getValor(0, numeroDePlaza);
 				sumadorDelInvariante= sumadorDelInvariante+valorActualDeLaPlaza;
 				if(sumadorDelInvariante>invariante.getResultadoInvarianteObligatorio())
+				{
+					Utils.log.severe("El testeo de P invariantes dio mal, Red inestable");
 					return false;
+				}
 			}
 		}
-		
+		Utils.log.info("El testeo de P invariantes dio perfecto");
 		return true;
 	}
 	

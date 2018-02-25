@@ -91,15 +91,19 @@ public class RdP
 		// sensibilizadas una vez que cargue la red
 		calcularSensibilizadas();
 		
-		System.out.println("EN EL CONSTRUCTORRRRRRRRRRRRRRRRRRRR");
-		System.out.println("Betas de las transiciones: ");for (int i=0; i<this.getTimeDeLasTransiciones().getMatriz()[1].length;i++){System.out.print(this.getTimeDeLasTransiciones().getMatriz()[1][i]+" ");}System.out.println();//ojo aca
-		
-		System.out.println("Sensibilizadas anteriores");
+		Utils.log.info("Se creo la RdP");
+		this.getTimeDeLasTransiciones().imprimir();
+
 		//Utils.imprimirMatrizInt(this.getMSensibilizadasAnteriores());
-		
 		this.getSensibilizadas().imprimir();
 		
-		System.out.println("EL vector de TS es: ");for (int i=0; i<this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron().length;i++){System.out.print(this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[i]+" ");}System.out.println();
+		String cadena="EL vector de TS es: \n";
+		for (int i=0; i<this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron().length;i++)
+		{
+			cadena=cadena+this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[i]+" ";
+		}
+		cadena=cadena+"\n";
+		Utils.log.info(cadena);
 		
 		this.testeoTInvariantes();
 
@@ -230,22 +234,22 @@ public class RdP
 	}
 	private boolean sensibilizadaPorTiempo(int transicion)
 	{
-		System.out.println("Ejecutamos sensibilizadaPorTiempo (RdP)");
+		Utils.log.info("Ejecutamos sensibilizadaPorTiempo (RdP)");
 		transicion=transicion-1;
 		if(this.getTimeDeLasTransiciones().getMatriz()[1][transicion]==0)//ojoi aca
 		{
-			System.out.println("Es instantanea la transicion y se dispara. Teminamos sensibilizadaPorTiempo");
+			Utils.log.info("Es instantanea la transicion y se dispara. Terminamos sensibilizadaPorTiempo");
 			return true;
 		}
 		else if(System.currentTimeMillis()-this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]<=this.getTimeDeLasTransiciones().getMatriz()[1][transicion]
 			&& System.currentTimeMillis()-this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[transicion]>=this.getTimeDeLasTransiciones().getMatriz()[0][transicion])//ojo aca
 		{
-			System.out.println("Es temporal la transicion y se dispara. \nTeminamos sensibilizadaPorTiempo (RdP)");
+			Utils.log.info("Es temporal la transicion y se dispara. \nTeminamos sensibilizadaPorTiempo (RdP)");
 			return true;
 		}
 		else
 		{
-			System.out.println("No se puede disparar la trnasición. \nTeminamos sensibilizadaPorTiempo (RdP)");
+			Utils.log.info("No se puede disparar la trnasición. \nTeminamos sensibilizadaPorTiempo (RdP)");
 			return false;
 		}
 	}
@@ -254,7 +258,7 @@ public class RdP
 	//OJO que le restan 1 al indice aca... en el metodo de Tinvariantes tuve que sumarle 1 al partametro pasadao por indice... :P
 	public boolean disparar(int transicion) 
 	{
-		System.out.println("Se ejecuta el método disparar (de RdP)");
+		Utils.log.info("Se ejecuta el método disparar (de RdP)");
 		
 			if (transicion <= MIncidencia.getCantidadDeColumnas() || transicion > 0) 
 			{
@@ -268,13 +272,13 @@ public class RdP
 						Matriz VDisparo = crearVectorDisparo(transicion);
 						MarcadoActual.sumar(MIncidencia.mmult(VDisparo).transpuesta());      //Mi+1  = M0 + I*D
 						calcularSensibilizadas();
-						System.out.println("Se Disparo la transicion " + transicion);
-						System.out.println("Se termina el método disparar (de RdP).");
+						Utils.log.info("Se Disparo la transicion " + transicion);
+						Utils.log.info("Se termina el método disparar (de RdP).");
 						return true;
 					}
 				}
 			}
-		System.out.println("Se termina el método disparar (de RdP). Da false");
+		Utils.log.info("Se termina el método disparar (de RdP). Da false");
 		return false;
 
 	}
@@ -283,7 +287,7 @@ public class RdP
 	private void testeoTInvariantes() throws InterruptedException
 	{
 		boolean bandera=false;
-		System.out.println("Ejecutamos el testeoTInvariantes");
+		Utils.log.info("Ejecutamos el testeoTInvariantes");
 		this.getTInvariantes().imprimir();
 		this.getSensibilizadas().imprimir();
 		for(int i=0; i<this.getTInvariantes().getMatriz().length ;i++)
@@ -330,11 +334,11 @@ public class RdP
 		
 		if(contador==0)
 		{
-			System.out.println("Positivo");
+			Utils.log.info("Positivo");
 		}
 		else
 		{
-			System.out.println("Negativo");
+			Utils.log.severe("Negativo");
 		}
 	}
 	
@@ -351,7 +355,7 @@ public class RdP
      */
     
 	public void calcularSensibilizadas() {
-		System.out.println("Ejecutamos el método calcularSensibilizadas (RdP)");
+		Utils.log.info("Ejecutamos el método calcularSensibilizadas (RdP)");
 		for(int i=0; i<20;i++) {this.getMSensibilizadasAnteriores().getMatriz()[0][i]=this.getSensibilizadas().getMatriz()[0][i];}
 		
 		//this.getSensibilizadas().imprimir();
@@ -399,13 +403,19 @@ public class RdP
 		//System.out.println("Luego de calcular las sensibilizadas");
 		//System.out.println("Betas de las transiciones: ");for (int i=0; i<this.getTimeDeLasTransiciones().getMatriz()[1].length;i++){System.out.print(this.getTimeDeLasTransiciones().getMatriz()[1][i]+" ");}System.out.println();//ojo aca
 		
-		System.out.println("Sensibilizadas anteriores");for(int i=0;i<20;i++){System.out.print(this.getMSensibilizadasAnteriores().getMatriz()[0][i]+" ");}System.out.println("");
+		this.getMSensibilizadasAnteriores().imprimir();
 		this.getSensibilizadas().imprimir();
 		
+		String cadena="";
 		
+		cadena="EL vector de TS del sistema es de: \n";
+		for (int i=0; i<this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron().length;i++)
+		{
+			cadena=cadena+this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[i]+" ";
+		}
+		cadena=cadena+"\n";
 		
-		System.out.println("EL vector de TS del sistema es de: ");for (int i=0; i<this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron().length;i++){System.out.print(this.getTimeStampDeLasTransicionesCuandoSeSensibilizaron()[i]+" ");}System.out.println();
-		System.out.println("Terminamos el método calcularSensibilizadas (RdP)");
+		Utils.log.info("Terminamos el método calcularSensibilizadas (RdP)");
 	}
 	
 	public Matriz getTInvariantes()

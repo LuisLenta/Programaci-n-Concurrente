@@ -127,18 +127,7 @@ public class Matriz {
      */
 	public void imprimir() 
 	{
-		// Imprimimos matriz
-		System.out.println("Imprimimos la matriz "+nombre+":");
-
-		for (int aux = 0; aux < this.getCantidadDeFilas(); aux++) 
-		{
-			for (int aux1 = 0; aux1 < this.getCantidadDeColumnas(); aux1++) 
-			{
-				System.out.print(" " + this.matriz[aux][aux1]);
-			}
-			System.out.println("");
-		}
-		//System.out.println("");
+		Utils.log.info(this.toString());
 	}
 
 
@@ -183,6 +172,23 @@ public class Matriz {
 				this.setValor(i, j, 0);
 			}
 		}
+	}
+	
+	public String toString()
+	{
+		String cadena="";
+		//System.out.println("Imprimimos la matriz "+nombre+":");
+		cadena="Imprimimos la matriz "+nombre+": \n";
+
+		for (int aux = 0; aux < this.getCantidadDeFilas(); aux++) 
+		{
+			for (int aux1 = 0; aux1 < this.getCantidadDeColumnas(); aux1++) 
+			{
+				cadena=cadena+" " + this.matriz[aux][aux1];
+			}
+			cadena=cadena+"\n";
+		}
+		return cadena;
 	}
 	
 }

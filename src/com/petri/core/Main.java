@@ -1,6 +1,10 @@
 package com.petri.core;
 
 import java.io.IOException;
+import java.util.logging.Level;
+
+
+import java.util.logging.*;
 
 
 public class Main 
@@ -8,13 +12,22 @@ public class Main
 	
 	public static void main(String[] args) throws IOException, InterruptedException
 	{
+		//ConsoleHandler ch= new ConsoleHandler();
+		FileHandler fh= new FileHandler("MyLogger.log");
+		fh.setFormatter(new SimpleFormatter());
+		fh.setLevel(Level.FINE);
+		Utils.log.addHandler(fh);
+		Utils.log.info("Comenzó el programa");
+		
+		//Utils.log.log(Level.INFO,"PrimerLogeo papus");
+		
 		RdP Red = new RdP();
 		
 		int mat[][]=Red.getTInvariantes().getMatriz();
 		
 		Politicas politicas = new Politicas();
 		Colas cola = new Colas(20);
-		System.out.println("Se creo el gestor de monitor");
+		Utils.log.info("Se creo el gestor de monitor");
 		GestorDeMonitor GdeMonitor = new GestorDeMonitor(Red, cola, politicas);
 		
 		

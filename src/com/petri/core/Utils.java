@@ -17,33 +17,17 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-
+//import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+import java.util.logging.Level;
+import java.util.logging.Logger;
  
 
 public class Utils 
 {
-	//public static final Logger logger = LogManager.getLogger(Utils.class);
-	static public void imprimirMatrizLong(long[][] matriz)
-	{
-		for(int i=0; i<matriz.length;i++)
-		{
-			for(int j=0; j<matriz[0].length;j++)
-			{
-				System.out.print(matriz[i][j]+" ");
-			}
-			System.out.println("");
-		}
-	}
-	static public void imprimirMatrizInt(int[] ks)
-	{
-			for(int i=0; i<ks.length;i++)
-			{
-				System.out.print(ks[i]+" ");
-			}
-			System.out.println("");
-	}
+	//public static final Logger log = Logger.getLogger("LogDelPrograma");
+	public static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	
 	
 	static public void cargarMatriz(String rutaAcceso,TipoMatriz tipoDeMatriz,RdP rdp) throws IOException 
 	{
@@ -141,7 +125,7 @@ public class Utils
             	matriz.setNombre("MTiempoDeLasTansiciones");
             	rdp.setTiempoDeLasTransiciones(matriz);break;
             default:
-            	System.out.println("No se pudo cargar alguna matriz "+ tipoDeMatriz +" ya que no esta contemplada en enum.TipoMatriz CUIDADO!!!");
+            	log.warning("No se pudo cargar alguna matriz "+ tipoDeMatriz +" ya que no esta contemplada en enum.TipoMatriz CUIDADO!!!");
             	throw new IllegalArgumentException("No se puede cargar la matriz debido a que no esta contemplada en el tipo De Matriz");
             }
 
