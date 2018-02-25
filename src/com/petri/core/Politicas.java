@@ -317,7 +317,7 @@ public class Politicas {
 				}
 			}
 		}
-		System.out.println("El metodo buscaTransicion eligio " + transicion);
+		System.out.println("El metodo buscaTransicion eligió la trnasición: " + transicion);
 		return transicion;
 	}
 

@@ -8,32 +8,13 @@ public class Main
 	
 	public static void main(String[] args) throws IOException, InterruptedException
 	{
-		
-		/*
-		RdP Red = new RdP();
-		Colas Cola = new Colas(20);
-		GestorDeMonitor GdeMonitor = new GestorDeMonitor(Red, Cola);
-	
-		Maquina maquina1 = new Maquina(1);
-		Robot robot1 = new Robot (1);
-		new InicioProceso1(robot1, maquina1,GdeMonitor);
-		new Proceso1A1(GdeMonitor);
-	    new Proceso2 (GdeMonitor);
-	    new Proceso3 (GdeMonitor);
-	    new Proceso1A2(GdeMonitor);
-		*/
 		RdP Red = new RdP();
 		
-		System.out.println("los T invariantes tienen... tantas filas:  "+Red.getTInvariantes().getMatriz().length );
 		int mat[][]=Red.getTInvariantes().getMatriz();
-		System.out.println("los T invariantes tienen... tantas columnas:  "+mat[0].length );
 		
-		System.out.println("la cantidad de transiciones en sensibilizadas es de: "+Red.getSensibilizadas().getMatriz()[0].length);
-		
-		
-	    
 		Politicas politicas = new Politicas();
 		Colas cola = new Colas(20);
+		System.out.println("Se creo el gestor de monitor");
 		GestorDeMonitor GdeMonitor = new GestorDeMonitor(Red, cola, politicas);
 		
 		

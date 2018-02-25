@@ -32,23 +32,23 @@ public class GestorDeMonitor {
 
 	public void dispararTransicion(int transicion) throws InterruptedException 
 	{
+		System.out.println("\nComienza el método dispararTransicion (en GDM) con los siguientes parámetros: "+"transición="+transicion+" ---------");
+		System.out.println("Se teastearon los PInvariantes y el resultado fue: "+testDeInvariantes.testeoDeInvariantes(Red.getMarcadoActual()));
 		
-		System.out.println("Paso el invariante: "+testDeInvariantes.testeoDeInvariantes(Red.getMarcadoActual()));
-		
-		
-		System.out.println("Hay otros hilos esperando A : " + mutex.getQueueLength());
+		System.out.println("Hay otros hilos esperando A en el mutex cuya cantidad es: " + mutex.getQueueLength());
 		mutex.acquire();
-		System.out.println("Entro al monitor " + Thread.currentThread().getName());
+		System.out.println("Entró al monitor el hilo: " + Thread.currentThread().getName());
 		Red.getSensibilizadas().imprimir();
-		System.out.println("Intento Disparar " + transicion);
+		System.out.println("Intento Disparar la tansición: " + transicion);
 
-		while (!Red.disparar(transicion)) {
+		while (!Red.disparar(transicion)) 
+		{
 
 			mutex.release();
-			System.out.println("Encole " + transicion + "  "+ Thread.currentThread().getName());
+			System.out.println("Encolé la transición: " + transicion + " con el hilo "+ Thread.currentThread().getName());
 			Cola.encolar(transicion);
-			System.out.println("Salio de la cola " + Thread.currentThread().getName());
-			System.out.println("Hay otros hilos esperando B: " + mutex.getQueueLength());
+			System.out.println("Salió de la cola el hilo: " + Thread.currentThread().getName());
+			System.out.println("Hay otros hilos esperando B en el mutex y la cantidad es: " + mutex.getQueueLength());
 			mutex.acquire();
 		}
 		
@@ -57,21 +57,22 @@ public class GestorDeMonitor {
 		if(transicion == 10){ Politica.agregarPiezaB(); }
 		if(transicion == 3){ Politica.agregarPiezaC(); }
 		
-		//para descomentar
-		System.out.println("Cantidad de piezas A: " + Politica.getPiezasA());
-		System.out.println("Cantidad de piezas B: " + Politica.getPiezasB());
-		System.out.println("Cantidad de piezas C: " + Politica.getPiezasC());
+		
+		System.out.println("La cantidad de piezas A: " + Politica.getPiezasA());
+		System.out.println("La cantidad de piezas B: " + Politica.getPiezasB());
+		System.out.println("La cantidad de piezas C: " + Politica.getPiezasC());
 		
 		Matriz vs = Red.getSensibilizadas();
-
+		vs.setNombre("Matriz VS (getSensibilizadas)");
 		Matriz vc = Cola.quienesEstan();
+		vc.setNombre("Matriz VC (Cola.quienesEstan())");
 		Matriz m = vs.and(vc);
-		System.out.println("Matriz m ");
+		m.setNombre("Matriz m (es vs and vc)");
 		m.imprimir();
 		//para descomentar
         //System.out.println("Sensibilizadas antes de las politicas ");
         //Red.getSensibilizadas().imprimir();
-		System.out.println("Es cero" + m.esCero());
+		System.out.println("la matriz m es cero?= " + m.esCero());
 		
 		
 
@@ -85,7 +86,8 @@ public class GestorDeMonitor {
 			Cola.desencolar(Politica.cual3(m));
 		}
 		//Aca termina
-		System.out.println("Yo hago release" + Thread.currentThread().getName());
+		System.out.println("Yo hago release del siguiente hilo: " + Thread.currentThread().getName());
+		System.out.println("Termino el método dispararTransicion (en GDM) #########################################################");
 		mutex.release();
 		
 		

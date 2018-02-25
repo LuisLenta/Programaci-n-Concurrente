@@ -17,12 +17,38 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
  
 
 public class Utils 
 {
+	//public static final Logger logger = LogManager.getLogger(Utils.class);
+	static public void imprimirMatrizLong(long[][] matriz)
+	{
+		for(int i=0; i<matriz.length;i++)
+		{
+			for(int j=0; j<matriz[0].length;j++)
+			{
+				System.out.print(matriz[i][j]+" ");
+			}
+			System.out.println("");
+		}
+	}
+	static public void imprimirMatrizInt(int[] ks)
+	{
+			for(int i=0; i<ks.length;i++)
+			{
+				System.out.print(ks[i]+" ");
+			}
+			System.out.println("");
+	}
+	
 	static public void cargarMatriz(String rutaAcceso,TipoMatriz tipoDeMatriz,RdP rdp) throws IOException 
 	{
+		//logger.debug("asdasd");
+		//log4j.configurationFile("");
 		try 
 		{
 			FileInputStream file = new FileInputStream(new File(rutaAcceso));
@@ -50,8 +76,8 @@ public class Utils
 				rowAuxiliar=rowIteratorAux.next();
 				cantidadDeFilas=sheet.getPhysicalNumberOfRows();
 				cantidadDeColumnas=rowAuxiliar.getPhysicalNumberOfCells();
-				System.out.println("El numero de filas es de: "+cantidadDeFilas);
-				System.out.println("el numero de columnas es de: "+cantidadDeColumnas);
+				//System.out.println("El numero de filas es de: "+cantidadDeFilas);
+				//System.out.println("el numero de columnas es de: "+cantidadDeColumnas);
 				//System.out.println(sheet.getSheetName());
 			}
 
@@ -83,30 +109,40 @@ public class Utils
             switch(tipoDeMatriz)
             {
             case MarcadoInicial:
+            	matriz.setNombre("MarcadoInicial");
             	rdp.setMarcadoInicial(matriz);
             	break;
             case MarcadoActual:
+            	matriz.setNombre("MarcadoActual");
             	rdp.setMarcadoActual(matriz);
             	break;
             case MIncidencia:
+            	matriz.setNombre("MIncidencia");
             	rdp.setMatrizIncidencia(matriz);
             	break;
             case MInhibicion:
+            	matriz.setNombre("MInhibicion");
             	rdp.setMatrizInhibicion(matriz);
             	break;
             case MSensibilizadas: 
+            	matriz.setNombre("MSensibilizadas");
             	rdp.setSensibilizadas(matriz);break;
             case MDisparos:
+            	matriz.setNombre("MDisparos");
             	rdp.setMatrizDeDisparos(matriz);
             	break;
             case MIncidenciaPrevia:
+            	matriz.setNombre("MIncidenciaPrevia");
             	rdp.setMatrizIncidenciaPrevia(matriz);break;
             case MTInvariantes:
+            	matriz.setNombre("MTInvariantes");
             	rdp.setMatrizTInvariantes(matriz);break;
             case MTiempoDeLasTansiciones:
+            	matriz.setNombre("MTiempoDeLasTansiciones");
             	rdp.setTiempoDeLasTransiciones(matriz);break;
             default:
-            	System.out.println("No se pudo cargar alguna matriz CUIDADO!!!");
+            	System.out.println("No se pudo cargar alguna matriz "+ tipoDeMatriz +" ya que no esta contemplada en enum.TipoMatriz CUIDADO!!!");
+            	throw new IllegalArgumentException("No se puede cargar la matriz debido a que no esta contemplada en el tipo De Matriz");
             }
 
 		}

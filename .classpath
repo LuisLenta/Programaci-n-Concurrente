@@ -13,5 +13,7 @@
 	<classpathentry kind="lib" path="librerias/poi-3.7/poi-scratchpad-3.7-20101029.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="librerias/poi-3.7/ooxml-lib/dom4j-2.1.0.jar"/>
+	<classpathentry kind="lib" path="librerias/log4j-1.2-2.9.1/log4j-api-2.9.1.jar"/>
+	<classpathentry kind="lib" path="librerias/log4j-1.2-2.9.1/log4j-core-2.9.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

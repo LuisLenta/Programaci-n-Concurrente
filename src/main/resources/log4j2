@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>;
+<Configuration>
+  <Properties>
+    <Property name="name1">logs</property>
+  </Properties>
+  <Appenders>
+    <RollingFile name="RollingFile" fileName="$(baseDir)/app.log"
+        filePattern="$(baseDir)/$$(date:yyyy-MM)/app-%d(yyyy-MM-dd).log.gz">
+    <PatternLayout pattern="%d %p %c(1.) [%t] %m%n" />
+    <DefaultRolloverStrategy>
+        <Delete basePath="$(baseDir)" maxDepth="2">
+            <IfFileName glob="./app-*.log.gz">
+            <IfLastModified age="60d"/>
+        </Delete>
+    </DefaultRolloverStrategy>
+  </Appenders>
+  <Loggers>
+    <Logger name="info">
+        <AppenderRef ref="RollingFile"/>
+    </Logger>
+  
+    <Root level="debug">
+      <AppenderRef ref="RollingFile"/>
+    </Root>
+  </Loggers>
+</Configuration>

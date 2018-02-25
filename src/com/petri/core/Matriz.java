@@ -4,23 +4,41 @@ public class Matriz {
 
 	public int matriz[][];//la matriz
 	public String nombreDeLaMatriz;
+	private String nombre;
 	
 	/*
 	 * Construye una matriz vacia con el tamaño especificado
 	 */
-	public Matriz(int filas, int columnas/*, String nombreDeLaMatriz*/) 
+	public Matriz(int filas, int columnas) 
 	{
 		this.matriz = new int[filas][columnas];
+		this.nombre="Ninguno";
+		//this.nombreDeLaMatriz=nombreDeLaMatriz
+	}
+	public Matriz(int filas, int columnas, String nombre) 
+	{
+		this.matriz = new int[filas][columnas];
+		this.nombre=nombre;
 		//this.nombreDeLaMatriz=nombreDeLaMatriz
 	}
 
 	/*
 	 * Constructor que modifica la referencia 
 	 */
-	public Matriz(int matriz[][]) {
+	public Matriz(int matriz[][]) 
+	{
 		this.matriz = matriz;
+		this.nombre="Ninguno";
 	}
 	
+	public void setNombre (String nombre)
+	{
+		this.nombre=nombre;
+	}
+	public String getNombre()
+	{
+		return this.nombre;
+	}
     
 	/*
 	 * Devuelve una matriz en la cual... los elementros que valen 1 son aquellos elementos en los cuales vale
@@ -107,23 +125,28 @@ public class Matriz {
     /*
      * Imprime la matriz
      */
-	public void imprimir() {
+	public void imprimir() 
+	{
 		// Imprimimos matriz
-		System.out.println("Imprimimos la matriz");
+		System.out.println("Imprimimos la matriz "+nombre+":");
 
-		for (int aux = 0; aux < this.getCantidadDeFilas(); aux++) {
-			for (int aux1 = 0; aux1 < this.getCantidadDeColumnas(); aux1++) {
+		for (int aux = 0; aux < this.getCantidadDeFilas(); aux++) 
+		{
+			for (int aux1 = 0; aux1 < this.getCantidadDeColumnas(); aux1++) 
+			{
 				System.out.print(" " + this.matriz[aux][aux1]);
 			}
 			System.out.println("");
 		}
+		//System.out.println("");
 	}
 
 
 	/*
 	 * Devuelve la matriz almacenada
 	 */
-	public int[][] getMatriz() {
+	public int[][] getMatriz() 
+	{
 		return this.matriz;
 	}
 

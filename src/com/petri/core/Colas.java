@@ -1,11 +1,13 @@
 package com.petri.core;
 import java.util.concurrent.Semaphore;
 
-public class Colas {
+public class Colas 
+{
 	
 	private Semaphore[] arregloSemaphores;
 
-public Colas(int tamano) {
+	public Colas(int tamano) 
+	{
 		
 	arregloSemaphores = new Semaphore[tamano];
 
@@ -14,7 +16,8 @@ public Colas(int tamano) {
 		}
 	}
 
-	protected boolean desencolar(int i) throws InterruptedException {
+	public boolean desencolar(int i) throws InterruptedException 
+	{
 		if (arregloSemaphores[i-1] != null) {
 			arregloSemaphores[i-1].release();
 			return true;
@@ -22,12 +25,15 @@ public Colas(int tamano) {
 		return false;
 	}
 
-	protected Matriz quienesEstan() {
-		Matriz vc = new Matriz(1, arregloSemaphores.length);
+	public Matriz quienesEstan() 
+	{
+		Matriz vc = new Matriz(1, arregloSemaphores.length,"Vc dentro de la clase Cola: ");
 		vc.clear();
 
-		for (int i = 0; i < arregloSemaphores.length; i++) {
-			if (arregloSemaphores[i].getQueueLength() != 0) {
+		for (int i = 0; i < arregloSemaphores.length; i++) 
+		{
+			if (arregloSemaphores[i].getQueueLength() != 0) 
+			{
 				vc.setValor(0, i, 1);
 			}
 		}
@@ -35,7 +41,8 @@ public Colas(int tamano) {
 		return vc;
 	}
 
-	protected void encolar(int transicion) throws InterruptedException {
+	public void encolar(int transicion) throws InterruptedException 
+	{
 		if (arregloSemaphores[transicion-1] != null) {
 			arregloSemaphores[transicion-1].acquire();
 		}
