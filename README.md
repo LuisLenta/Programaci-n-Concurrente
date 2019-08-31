@@ -1,40 +1,17 @@
-# Programaci-n-Concurrente
+# Programación Concurrente
 
-Se supieron presentar varios problemas a la hora de hacer los push por lo tanto esto sera un pequeño recordatorio:
+Trabajo final para materia Programación Concurrente de la carrera Ingeniería en Computación de la Universidad Nacional de Córdoba.
 
+En la carpeta docs  se puede encontrar la descripción del trabajo. 
 
-git branch==> me permite saber si en la carpeta que estoy existen branchs y en caso de ser asi aparece en verde sobre cual estoy aprado
+En resumen, se modelo con una red de Petri una planta compuesta por 4 líneas de producción que comparten tres robots entre sí. 
 
-git status ==> te arrojara un informe tanto de los archivos borrados como los modificados, los que aparecen en rojo no fueron añadidos
+A partir del modelado con la red de Petri se identificarón las propiedades necesarias para modificar el sistema y que pudiera trabajar continuamente sin interrupciones. Interrupciones que podían ser causadas por el hecho de que una línea de producción podía necesitar un robot que otra línea estaba utilizando, lo que producía un bloqueo del sistema. 
 
-git add . = git add ./==> añadira toda la estructura nueva archivos etc... implica borrar archivos
+Una vez solucianada esta problematica se implemento una simulación utilizando Java y los conceptos adquiridos durante el cursado sobre programación concurrente. Estos se basan en el modelado del sistema a partir de una red de Petri, lo que nos permite mantener la lógica controlada gracias a las propiedades de las redes de Petri. Tambien, se utiliza un Monitor, encargado de manejar la concurrencia de los hilos en el programa, quienes tienen la tarea de realizar las "acciones" permitidas por la red. Además, utilizamos las propiedades de la red para realizar el testeo del código.  
 
+Todo el código se puede encontrar dentro de  src/com/petri/
 
-si hacemos: git add ./un archivo especifico ==> dsps se puede ir commiteando uno por uno
- o si es una carpeta se comitean todos los archivos añadidos en esa carpeta
-por ejemplo: 
-		git add ./Matrices/"Nueva matriz xls"
-		git commit -m "se agrego esta nueva matriz porque quise...."
+Allí dentro tenemos el core del código y su correspondiente testing. 
 
-
-git commit -m "texto que quieras"
-
-
-git push
-
-git push origin master ==> Reemplaza master por la rama a la que quieres enviar tus cambios.
-
-ultima prueba 
-
-
-
-
-
-
-
-
-
-https://git-scm.com/book/es/v1/Fundamentos-de-Git-Guardando-cambios-en-el-repositorio
-
-
-ahora q carajo le paso al branch LCDSM!!!
+ 
