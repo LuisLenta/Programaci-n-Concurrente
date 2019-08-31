@@ -1,0 +1,432 @@
+ Comienza el programa 
+
+ 
+
+R2 Toma Pieza de Imput 2 - L2
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 1
+ Pieza en Imput 3
+ R2 Trasladando Pieza a Maq 2 - L2
+ Restringe L1 - Alt 2 y L3
+ Restringe R1, A1 o A2 - L1
+ Robot 1 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R2 Deposita Pieza en Maq 2 - L2
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maq 2 Trabajando - L2
+ Maquina 1 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 1
+ Pieza en Imput 3
+ Restringe L1 - Alt 2 y L3
+ Restringe R1, A1 o A2 - L1
+ Robot 1 Esperando
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R2 Toma Pieza de Maq 2 - L2
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 1
+ Pieza en Imput 3
+ R2 Trasladando Pieza a Output 2 - L2
+ Restringe L1 - Alt 2 y L3
+ Restringe R1, A1 o A2 - L1
+ Restringe R2
+ Robot 1 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R2 Deposita Pieza en Output 2 - L2
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 1
+ Pieza en Imput 2
+ Pieza en Imput 3
+ Restringe L1 - Alt 2 y L3
+ Restringe R1, A1 o A2 - L1
+ Restringe R2
+ Robot 1 Esperando
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R1 Toma Pieza de Imput 1 - L1
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 2
+ Pieza en Imput 3
+ R1 Trasladando Pieza a Maq 1 o Maq 3 - L1
+ Restringe L1 - Alt 2 y L3
+ Restringe R2
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R1 Deposita Pieza en Maq 1 - L1 - A1 - N1
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maq 1 Trabajando - L1 - A1
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 2
+ Pieza en Imput 3
+ Restringe L1 - Alt 2 y L3
+ Restringe R2
+ Robot 1 Esperando
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R2 Toma Pieza de Maq 1 - L1 - A1
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 2
+ Pieza en Imput 3
+ R2 Trasladando Pieza a Maq 2 - L1 - A1
+ Restringe L1 - Alt 2 y L3
+ Restringe R1, A1 o A2 - L1
+ Robot 1 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R2 Deposita Pieza en Maq 2 - L1 - A1
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maq 2 Trabajando - L1 - A1
+ Maquina 1 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 2
+ Pieza en Imput 3
+ Restringe L1 - Alt 2 y L3
+ Restringe R1, A1 o A2 - L1
+ Restringe R2
+ Robot 1 Esperando
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R3 Toma Pieza de Maq 2 - L1 - A1
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 2
+ Pieza en Imput 3
+ R3 Trasladando Pieza a Output 1 - L1
+ Restringe L1 - Alt 2 y L3
+ Restringe R1, A1 o A2 - L1
+ Restringe R2
+ Robot 1 Esperando
+ Robot 2 Esperando
+ 
+
+ 
+
+R3 Deposita Pieza en Output 1 - L1
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 1
+ Pieza en Imput 2
+ Pieza en Imput 3
+ Restringe L1 - Alt 2 y L3
+ Restringe R1, A1 o A2 - L1
+ Restringe R2
+ Robot 1 Esperando
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R1 Toma Pieza de Imput 1 - L1
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 2
+ Pieza en Imput 3
+ R1 Trasladando Pieza a Maq 1 o Maq 3 - L1
+ Restringe L1 - Alt 2 y L3
+ Restringe R2
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R1 Deposita Pieza en Maq 3 - L1 - A2
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maq 3 Trabajando - L1 - A2
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 2
+ Pieza en Imput 3
+ Restringe R2
+ Robot 1 Esperando
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R2 Toma Pieza de Maq 3 - L1 - A2
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 2
+ Pieza en Imput 3
+ R2 Trasladando Pieza a Maq 4 - L1 - A2
+ Restringe R1, A1 o A2 - L1
+ Robot 1 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R2 Deposita Pieza en Maq 4 - L1 - A2
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maq 4 Trabajando - L1 - A2
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Pieza en Imput 2
+ Pieza en Imput 3
+ Restringe R1, A1 o A2 - L1
+ Restringe R2
+ Robot 1 Esperando
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R3 Toma Pieza de Maq 4 - L1 - A2
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 2
+ Pieza en Imput 3
+ R3 Trasladando Pieza a Output 1 - L1
+ Restringe L1 - Alt 2 y L3
+ Restringe R1, A1 o A2 - L1
+ Restringe R2
+ Robot 1 Esperando
+ Robot 2 Esperando
+ 
+
+ 
+
+R3 Deposita Pieza en Output 1 - L1
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 1
+ Pieza en Imput 2
+ Pieza en Imput 3
+ Restringe L1 - Alt 2 y L3
+ Restringe R1, A1 o A2 - L1
+ Restringe R2
+ Robot 1 Esperando
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R3 Toma Pieza Imput 3 - L3
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 1
+ Pieza en Imput 2
+ R3 Trasladando Pieza a Maq 4 - L3
+ Restringe R1, A1 o A2 - L1
+ Restringe R2
+ Robot 1 Esperando
+ Robot 2 Esperando
+ 
+
+ 
+
+R3 Deposita Pieza en Maq 4 - L3
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maq 4 Trabajando - L3
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Pieza en Imput 1
+ Pieza en Imput 2
+ Restringe R1, A1 o A2 - L1
+ Restringe R2
+ Robot 1 Esperando
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R2 Toma Pieza de Maq 4 - L3
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 1
+ Pieza en Imput 2
+ R2 Trasladando Pieza a Maq 3 - L3
+ Restringe R1, A1 o A2 - L1
+ Robot 1 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R2 Deposita Pieza en Maq 3 - L3
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maq 3 Trabajando
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 1
+ Pieza en Imput 2
+ Restringe R1, A1 o A2 - L1
+ Robot 1 Esperando
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R1 Toma Pieza de Maq 3 - L3
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 1
+ Pieza en Imput 2
+ R1 Trasladando Pieza a Output 3 - L3
+ Restringe L1 - Alt 2 y L3
+ Restringe R1, A1 o A2 - L1
+ Restringe R2
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ 
+
+R1 Deposita Pieza en Output 3 - L3
+ -------------------------------------------------------------------------------------------------------------
+ El testeo de P invariantes termino y fue pasado con éxito.
+ -------------------------------------------------------------------------------------------------------------
+ Maquina 1 Esperando
+ Maquina 2 Esperando
+ Maquina 3 Esperando
+ Maquina 4 Esperando
+ Pieza en Imput 1
+ Pieza en Imput 2
+ Pieza en Imput 3
+ Restringe L1 - Alt 2 y L3
+ Restringe R1, A1 o A2 - L1
+ Restringe R2
+ Robot 1 Esperando
+ Robot 2 Esperando
+ Robot 3 Esperando
+ 
+
+ *************************************************************************************************************
+ El testeo de TInvariantes paso con éxito
+ *************************************************************************************************************

@@ -1,0 +1,2266 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="Net-One" type="P/T net">
+<token id="Default" enabled="true" red="0" green="0" blue="0"/>
+<place id="Maq 1 Trabajando - L1 - A1">
+<graphics>
+<position x="465.0" y="270.0"/>
+</graphics>
+<name>
+<value>Maq 1 Trabajando - L1 - A1</value>
+<graphics>
+<offset x="80.0" y="1.25"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Maq 2 Trabajando - L1 - A1">
+<graphics>
+<position x="465.0" y="645.0"/>
+</graphics>
+<name>
+<value>Maq 2 Trabajando - L1 - A1</value>
+<graphics>
+<offset x="112.5" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id=" Maq 2 Trabajando - L2">
+<graphics>
+<position x="210.0" y="450.0"/>
+</graphics>
+<name>
+<value> Maq 2 Trabajando - L2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Maq 3 Trabajando">
+<graphics>
+<position x="1020.0" y="270.0"/>
+</graphics>
+<name>
+<value>Maq 3 Trabajando</value>
+<graphics>
+<offset x="92.5" y="1.25"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Maq 3 Trabajando - L1 - A2">
+<graphics>
+<position x="735.0" y="270.0"/>
+</graphics>
+<name>
+<value>Maq 3 Trabajando - L1 - A2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Maq 4 Trabajando - L1 - A2">
+<graphics>
+<position x="735.0" y="630.0"/>
+</graphics>
+<name>
+<value>Maq 4 Trabajando - L1 - A2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id=" Maq 4 Trabajando - L3">
+<graphics>
+<position x="1020.0" y="630.0"/>
+</graphics>
+<name>
+<value> Maq 4 Trabajando - L3</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Maquina 1 Esperando">
+<graphics>
+<position x="345.0" y="270.0"/>
+</graphics>
+<name>
+<value>Maquina 1 Esperando</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Maquina 2 Esperando">
+<graphics>
+<position x="330.0" y="645.0"/>
+</graphics>
+<name>
+<value>Maquina 2 Esperando</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Maquina 3 Esperando">
+<graphics>
+<position x="885.0" y="285.0"/>
+</graphics>
+<name>
+<value>Maquina 3 Esperando</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Maquina 4 Esperando">
+<graphics>
+<position x="885.0" y="630.0"/>
+</graphics>
+<name>
+<value>Maquina 4 Esperando</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Pieza en Imput 1">
+<graphics>
+<position x="555.0" y="1020.0"/>
+</graphics>
+<name>
+<value>Pieza en Imput 1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,10</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Pieza en Imput 2">
+<graphics>
+<position x="15.0" y="510.0"/>
+</graphics>
+<name>
+<value>Pieza en Imput 2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,20</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Pieza en Imput 3">
+<graphics>
+<position x="1200.0" y="465.0"/>
+</graphics>
+<name>
+<value>Pieza en Imput 3</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,30</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="R1 Trasladando  Pieza a Maq 1 o Maq 3 - L1">
+<graphics>
+<position x="585.0" y="105.0"/>
+</graphics>
+<name>
+<value>R1 Trasladando  Pieza a Maq 1 o Maq 3 - L1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="R1 Trasladando Pieza a Output 3 - L3">
+<graphics>
+<position x="1020.0" y="105.0"/>
+</graphics>
+<name>
+<value>R1 Trasladando Pieza a Output 3 - L3</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="R2 Trasladando Pieza a Maq 2 - L1 - A1">
+<graphics>
+<position x="465.0" y="450.0"/>
+</graphics>
+<name>
+<value>R2 Trasladando Pieza a Maq 2 - L1 - A1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="R2 Trasladando Pieza a Maq 2 - L2">
+<graphics>
+<position x="210.0" y="270.0"/>
+</graphics>
+<name>
+<value>R2 Trasladando Pieza a Maq 2 - L2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="R2 Trasladando Pieza a Maq 3 - L3">
+<graphics>
+<position x="1020.0" y="450.0"/>
+</graphics>
+<name>
+<value>R2 Trasladando Pieza a Maq 3 - L3</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="R2 Trasladando Pieza a Maq 4 - L1 - A2">
+<graphics>
+<position x="735.0" y="450.0"/>
+</graphics>
+<name>
+<value>R2 Trasladando Pieza a Maq 4 - L1 - A2</value>
+<graphics>
+<offset x="145.0" y="27.5"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="R2 Trasladando Pieza a Output 2 - L2">
+<graphics>
+<position x="210.0" y="660.0"/>
+</graphics>
+<name>
+<value>R2 Trasladando Pieza a Output 2 - L2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="R3 Trasladando  Pieza a Maq 4 - L3">
+<graphics>
+<position x="1020.0" y="840.0"/>
+</graphics>
+<name>
+<value>R3 Trasladando  Pieza a Maq 4 - L3</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="R3 Trasladando Pieza a Output 1 - L1">
+<graphics>
+<position x="720.0" y="840.0"/>
+</graphics>
+<name>
+<value>R3 Trasladando Pieza a Output 1 - L1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Restringe L1 - Alt 2 y L3">
+<graphics>
+<position x="1320.0" y="465.0"/>
+</graphics>
+<name>
+<value>Restringe L1 - Alt 2 y L3</value>
+<graphics>
+<offset x="20.0" y="-15.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Restringe R1, A1 o A2 - L1">
+<graphics>
+<position x="840.0" y="15.0"/>
+</graphics>
+<name>
+<value>Restringe R1, A1 o A2 - L1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Restringe R2">
+<graphics>
+<position x="270.0" y="45.0"/>
+</graphics>
+<name>
+<value>Restringe R2</value>
+<graphics>
+<offset x="-3.75" y="16.25"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Robot 1 Esperando">
+<graphics>
+<position x="855.0" y="90.0"/>
+</graphics>
+<name>
+<value>Robot 1 Esperando</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Robot 2 Esperando">
+<graphics>
+<position x="600.0" y="450.0"/>
+</graphics>
+<name>
+<value>Robot 2 Esperando</value>
+<graphics>
+<offset x="-2.1590909090909065" y="228.4090909090909"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Robot 3 Esperando">
+<graphics>
+<position x="870.0" y="840.0"/>
+</graphics>
+<name>
+<value>Robot 3 Esperando</value>
+<graphics>
+<offset x="22.5" y="58.75"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="R1 Deposita Pieza en Maq 1 - L1 - A1 - N1">
+<graphics>
+<position x="465.0" y="180.0"/>
+</graphics>
+<name>
+<value>R1 Deposita Pieza en Maq 1 - L1 - A1 - N1</value>
+<graphics>
+<offset x="70.0" y="-7.5"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R1 Deposita Pieza en Maq 3 - L1 - A2 - N2">
+<graphics>
+<position x="735.0" y="180.0"/>
+</graphics>
+<name>
+<value>R1 Deposita Pieza en Maq 3 - L1 - A2 - N2</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R1 Deposita Pieza en Output 3 - L3 - N3">
+<graphics>
+<position x="1020.0" y="30.0"/>
+</graphics>
+<name>
+<value>R1 Deposita Pieza en Output 3 - L3 - N3</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R1 Toma Pieza de  Imput 1 - L1 - N4">
+<graphics>
+<position x="615.0" y="30.0"/>
+</graphics>
+<name>
+<value>R1 Toma Pieza de  Imput 1 - L1 - N4</value>
+<graphics>
+<offset x="-2.0" y="23.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R1 Toma Pieza de Maq 3 - L3 - N5">
+<graphics>
+<position x="1020.0" y="180.0"/>
+</graphics>
+<name>
+<value>R1 Toma Pieza de Maq 3 - L3 - N5</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R2 Deposita Pieza en Maq 2 - L1 - A1 - N6">
+<graphics>
+<position x="465.0" y="525.0"/>
+</graphics>
+<name>
+<value>R2 Deposita Pieza en Maq 2 - L1 - A1 - N6</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R2 Deposita Pieza en Maq 2 - L2 - N7">
+<graphics>
+<position x="210.0" y="360.0"/>
+</graphics>
+<name>
+<value>R2 Deposita Pieza en Maq 2 - L2 - N7</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R2 Deposita Pieza en Maq 3 - L3 - N8">
+<graphics>
+<position x="1020.0" y="360.0"/>
+</graphics>
+<name>
+<value>R2 Deposita Pieza en Maq 3 - L3 - N8</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R2 Deposita Pieza en Maq 4 - L1 - A2 - N9">
+<graphics>
+<position x="735.0" y="525.0"/>
+</graphics>
+<name>
+<value>R2 Deposita Pieza en Maq 4 - L1 - A2 - N9</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R2 Deposita Pieza en Output 2 - L2 - N10">
+<graphics>
+<position x="210.0" y="765.0"/>
+</graphics>
+<name>
+<value>R2 Deposita Pieza en Output 2 - L2 - N10</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R2 Toma Pieza de Imput 2 - L2 - N11">
+<graphics>
+<position x="210.0" y="180.0"/>
+</graphics>
+<name>
+<value>R2 Toma Pieza de Imput 2 - L2 - N11</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R2 Toma Pieza de Maq 1 - L1 - A1 - N12">
+<graphics>
+<position x="465.0" y="360.0"/>
+</graphics>
+<name>
+<value>R2 Toma Pieza de Maq 1 - L1 - A1 - N12</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R2 Toma Pieza de Maq 2 - L2 - N13">
+<graphics>
+<position x="210.0" y="525.0"/>
+</graphics>
+<name>
+<value>R2 Toma Pieza de Maq 2 - L2 - N13</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R2 Toma Pieza de Maq 3 - L1 - A2 - N14">
+<graphics>
+<position x="735.0" y="360.0"/>
+</graphics>
+<name>
+<value>R2 Toma Pieza de Maq 3 - L1 - A2 - N14</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R2 Toma Pieza de Maq 4 - L3 - N15 ">
+<graphics>
+<position x="1020.0" y="525.0"/>
+</graphics>
+<name>
+<value>R2 Toma Pieza de Maq 4 - L3 - N15 </value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R3 Deposita Pieza en Maq 4 - L3 - N16">
+<graphics>
+<position x="1020.0" y="720.0"/>
+</graphics>
+<name>
+<value>R3 Deposita Pieza en Maq 4 - L3 - N16</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>270</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R3 Deposita Pieza en Output 1 - L1 - N17">
+<graphics>
+<position x="720.0" y="930.0"/>
+</graphics>
+<name>
+<value>R3 Deposita Pieza en Output 1 - L1 - N17</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R3 Toma Pieza de Maq 2 - L1 - A1 - N18">
+<graphics>
+<position x="465.0" y="765.0"/>
+</graphics>
+<name>
+<value>R3 Toma Pieza de Maq 2 - L1 - A1 - N18</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R3 Toma Pieza de Maq 4 - L1 - A2 - N19">
+<graphics>
+<position x="720.0" y="735.0"/>
+</graphics>
+<name>
+<value>R3 Toma Pieza de Maq 4 - L1 - A2 - N19</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="R3 Toma Pieza Imput 3 - L3 - N20">
+<graphics>
+<position x="1020.0" y="945.0"/>
+</graphics>
+<name>
+<value>R3 Toma Pieza Imput 3 - L3 - N20</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="Deposita Pieza en Maq_2 to Robot 2" source="R2 Deposita Pieza en Maq 2 - L2 - N7" target="Robot 2 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="226" y="371" curvePoint="false"/>
+<arcpath id="001" x="596" y="458" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza en Maq_2 to Trabaja Maq_2" source="R2 Deposita Pieza en Maq 2 - L2 - N7" target=" Maq 2 Trabajando - L2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="221" y="386" curvePoint="false"/>
+<arcpath id="001" x="220" y="446" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza en Maq_3 to Robot 1" source="R1 Deposita Pieza en Maq 3 - L1 - A2 - N2" target="Robot 1 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="751" y="183" curvePoint="false"/>
+<arcpath id="001" x="854" y="109" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza en Maq_3 to Trabaja Maq_3" source="R1 Deposita Pieza en Maq 3 - L1 - A2 - N2" target="Maq 3 Trabajando - L1 - A2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="746" y="206" curvePoint="false"/>
+<arcpath id="001" x="746" y="266" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza en Maq_4 to Robot 2" source="R2 Deposita Pieza en Maq 4 - L1 - A2 - N9" target="Robot 2 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="740" y="541" curvePoint="false"/>
+<arcpath id="001" x="624" y="469" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza en Maq_4 to Trabaja Maq_4" source="R2 Deposita Pieza en Maq 4 - L1 - A2 - N9" target="Maq 4 Trabajando - L1 - A2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="746" y="551" curvePoint="false"/>
+<arcpath id="001" x="746" y="626" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza en Maq 3 to Robot 2" source="R2 Deposita Pieza en Maq 3 - L3 - N8" target="Robot 2 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1026" y="377" curvePoint="false"/>
+<arcpath id="001" x="626" y="458" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza en Maq 3 to Trabaja Maq 3" source="R2 Deposita Pieza en Maq 3 - L3 - N8" target="Maq 3 Trabajando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1031" y="356" curvePoint="false"/>
+<arcpath id="001" x="1041" y="317" curvePoint="false"/>
+<arcpath id="002" x="1035" y="295" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza en Maq 4 to Robot 3" source="R3 Deposita Pieza en Maq 4 - L3 - N16" target="Robot 3 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1027" y="736" curvePoint="false"/>
+<arcpath id="001" x="892" y="841" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza en Maq 4 to Trabaja Maq 4" source="R3 Deposita Pieza en Maq 4 - L3 - N16" target=" Maq 4 Trabajando - L3">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1036" y="726" curvePoint="false"/>
+<arcpath id="001" x="1031" y="656" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza Maq 1 to Robot 1" source="R1 Deposita Pieza en Maq 1 - L1 - A1 - N1" target="Robot 1 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="480" y="196" curvePoint="false"/>
+<arcpath id="001" x="851" y="104" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza Maq 1 to Trabaja Maq 1" source="R1 Deposita Pieza en Maq 1 - L1 - A1 - N1" target="Maq 1 Trabajando - L1 - A1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="476" y="206" curvePoint="false"/>
+<arcpath id="001" x="476" y="266" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza Maq 2 to Robot 2" source="R2 Deposita Pieza en Maq 2 - L1 - A1 - N6" target="Robot 2 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="480" y="536" curvePoint="false"/>
+<arcpath id="001" x="598" y="469" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Deposita Pieza Maq 2 to Trabaja Maq 2" source="R2 Deposita Pieza en Maq 2 - L1 - A1 - N6" target="Maq 2 Trabajando - L1 - A1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="476" y="551" curvePoint="false"/>
+<arcpath id="001" x="476" y="641" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Imput 1 to Toma pieza imput 1" source="Pieza en Imput 1" target="R1 Toma Pieza de  Imput 1 - L1 - N4">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="567" y="1016" curvePoint="false"/>
+<arcpath id="001" x="626" y="56" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Imput 2 to Toma Pieza Imput 2" source="Pieza en Imput 2" target="R2 Toma Pieza de Imput 2 - L2 - N11">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="33" y="508" curvePoint="false"/>
+<arcpath id="001" x="216" y="191" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Imput 3 to Toma Pieza Imput 3" source="Pieza en Imput 3" target="R3 Toma Pieza Imput 3 - L3 - N20">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1206" y="489" curvePoint="false"/>
+<arcpath id="001" x="1031" y="941" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Maquina 1 to Deposita Pieza Maq 1" source="Maquina 1 Esperando" target="R1 Deposita Pieza en Maq 1 - L1 - A1 - N1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="368" y="271" curvePoint="false"/>
+<arcpath id="001" x="470" y="191" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Maquina 2 to Deposita Pieza en Maq_2" source="Maquina 2 Esperando" target="R2 Deposita Pieza en Maq 2 - L2 - N7">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="335" y="642" curvePoint="false"/>
+<arcpath id="001" x="221" y="386" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Maquina 2 to Deposita Pieza Maq 2" source="Maquina 2 Esperando" target="R2 Deposita Pieza en Maq 2 - L1 - A1 - N6">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="352" y="646" curvePoint="false"/>
+<arcpath id="001" x="470" y="537" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Maquina 3 to Deposita Pieza en Maq_3" source="Maquina 3 Esperando" target="R1 Deposita Pieza en Maq 3 - L1 - A2 - N2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="883" y="288" curvePoint="false"/>
+<arcpath id="001" x="750" y="197" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Maquina 3 to Deposita Pieza en Maq 3" source="Maquina 3 Esperando" target="R2 Deposita Pieza en Maq 3 - L3 - N8">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="909" y="303" curvePoint="false"/>
+<arcpath id="001" x="1026" y="367" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Maquina 4 to Deposita Pieza en Maq_4" source="Maquina 4 Esperando" target="R2 Deposita Pieza en Maq 4 - L1 - A2 - N9">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="884" y="632" curvePoint="false"/>
+<arcpath id="001" x="750" y="536" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Maquina 4 to Deposita Pieza en Maq 4" source="Maquina 4 Esperando" target="R3 Deposita Pieza en Maq 4 - L3 - N16">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="909" y="649" curvePoint="false"/>
+<arcpath id="001" x="1026" y="726" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Output 1 to Imput 1" source="R3 Deposita Pieza en Output 1 - L1 - N17" target="Pieza en Imput 1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="726" y="941" curvePoint="false"/>
+<arcpath id="001" x="579" y="1023" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Output 1 to Robot 3" source="R3 Deposita Pieza en Output 1 - L1 - N17" target="Robot 3 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="736" y="941" curvePoint="false"/>
+<arcpath id="001" x="868" y="859" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Output 2 to Imput 2" source="R2 Deposita Pieza en Output 2 - L2 - N10" target="Pieza en Imput 2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="216" y="777" curvePoint="false"/>
+<arcpath id="001" x="35" y="533" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Output 2 to Robot 2" source="R2 Deposita Pieza en Output 2 - L2 - N10" target="Robot 2 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="226" y="776" curvePoint="false"/>
+<arcpath id="001" x="600" y="470" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Output 3 to Imput 3" source="R1 Deposita Pieza en Output 3 - L3 - N3" target="Pieza en Imput 3">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1031" y="56" curvePoint="false"/>
+<arcpath id="001" x="1205" y="462" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Output 3 to Robot 1" source="R1 Deposita Pieza en Output 3 - L3 - N3" target="Robot 1 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1026" y="41" curvePoint="false"/>
+<arcpath id="001" x="879" y="96" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="R1 Toma Pieza de Maq 3 - L3 to Restringe L1 - Alt 2 y L3" source="R1 Toma Pieza de Maq 3 - L3 - N5" target="Restringe L1 - Alt 2 y L3">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1036" y="191" curvePoint="false"/>
+<arcpath id="001" x="1082" y="221" curvePoint="false"/>
+<arcpath id="002" x="1082" y="221" curvePoint="false"/>
+<arcpath id="003" x="1320" y="465" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="R2 Deposita Pieza en Maq 2 - L1 - A1 to Restringe R2" source="R2 Deposita Pieza en Maq 2 - L1 - A1 - N6" target="Restringe R2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="477" y="521" curvePoint="false"/>
+<arcpath id="001" x="287" y="70" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="R2 Deposita Pieza en Maq 4 - L1 - A2 to Restringe R2" source="R2 Deposita Pieza en Maq 4 - L1 - A2 - N9" target="Restringe R2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="741" y="531" curvePoint="false"/>
+<arcpath id="001" x="291" y="67" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="R3 Toma Pieza de Maq 2 - L1 - A1 to R3 Trasladando Pieza a Output 1 - L1" source="R3 Toma Pieza de Maq 2 - L1 - A1 - N18" target="R3 Trasladando Pieza a Output 1 - L1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="480" y="781" curvePoint="false"/>
+<arcpath id="001" x="717" y="847" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Restringe Alt 1 y Alt 2 to Deposita Pieza en Maq_3" source="Restringe L1 - Alt 2 y L3" target="R1 Deposita Pieza en Maq 3 - L1 - A2 - N2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1318" y="469" curvePoint="false"/>
+<arcpath id="001" x="751" y="190" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Restringe L1 - Alt 2 y L3 to R3 Toma Pieza Imput 3 - L3" source="Restringe L1 - Alt 2 y L3" target="R3 Toma Pieza Imput 3 - L3 - N20">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1323" y="489" curvePoint="false"/>
+<arcpath id="001" x="1036" y="956" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Restringe R1 to Toma pieza imput 1" source="Restringe R1, A1 o A2 - L1" target="R1 Toma Pieza de  Imput 1 - L1 - N4">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="836" y="27" curvePoint="false"/>
+<arcpath id="001" x="631" y="36" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Restringe R2 to Toma Pieza de Maq_3" source="Restringe R2" target="R2 Toma Pieza de Maq 3 - L1 - A2 - N14">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="293" y="64" curvePoint="false"/>
+<arcpath id="001" x="741" y="367" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Restringe R2 to Toma Pieza de Maq 1" source="Restringe R2" target="R2 Toma Pieza de Maq 1 - L1 - A1 - N12">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="289" y="69" curvePoint="false"/>
+<arcpath id="001" x="470" y="371" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Restringe R2 to Toma Pieza de Maq 4" source="Restringe R2" target="R2 Toma Pieza de Maq 4 - L3 - N15 ">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="293" y="64" curvePoint="false"/>
+<arcpath id="001" x="1026" y="530" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Restringe R2 to Toma Pieza Imput 2" source="Restringe R2" target="R2 Toma Pieza de Imput 2 - L2 - N11">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="274" y="70" curvePoint="false"/>
+<arcpath id="001" x="221" y="176" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Robot 1 to Toma Pieza de Maq 3" source="Robot 1 Esperando" target="R1 Toma Pieza de Maq 3 - L3 - N5">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="879" y="108" curvePoint="false"/>
+<arcpath id="001" x="1026" y="186" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Robot 1 to Toma pieza imput 1" source="Robot 1 Esperando" target="R1 Toma Pieza de  Imput 1 - L1 - N4">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="851" y="98" curvePoint="false"/>
+<arcpath id="001" x="630" y="46" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Robot 2 to Toma Pieza de Maq_2" source="Robot 2 Esperando" target="R2 Toma Pieza de Maq 2 - L2 - N13">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="596" y="463" curvePoint="false"/>
+<arcpath id="001" x="226" y="531" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Robot 2 to Toma Pieza de Maq_3" source="Robot 2 Esperando" target="R2 Toma Pieza de Maq 3 - L1 - A2 - N14">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="623" y="452" curvePoint="false"/>
+<arcpath id="001" x="740" y="377" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Robot 2 to Toma Pieza de Maq 1" source="Robot 2 Esperando" target="R2 Toma Pieza de Maq 1 - L1 - A1 - N12">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="599" y="452" curvePoint="false"/>
+<arcpath id="001" x="480" y="376" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Robot 2 to Toma Pieza de Maq 4" source="Robot 2 Esperando" target="R2 Toma Pieza de Maq 4 - L3 - N15 ">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="626" y="463" curvePoint="false"/>
+<arcpath id="001" x="1026" y="538" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Robot 2 to Toma Pieza Imput 2" source="Robot 2 Esperando" target="R2 Toma Pieza de Imput 2 - L2 - N11">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="599" y="452" curvePoint="false"/>
+<arcpath id="001" x="226" y="191" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Robot 3 Esperando to R3 Toma Pieza de Maq 2 - L1 - A1" source="Robot 3 Esperando" target="R3 Toma Pieza de Maq 2 - L1 - A1 - N18">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="866" y="848" curvePoint="false"/>
+<arcpath id="001" x="481" y="771" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Robot 3 to Toma Pieza Imput 3" source="Robot 3 Esperando" target="R3 Toma Pieza Imput 3 - L3 - N20">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="893" y="859" curvePoint="false"/>
+<arcpath id="001" x="1026" y="957" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Robot 3 to Toma Pieza Maq_4" source="Robot 3 Esperando" target="R3 Toma Pieza de Maq 4 - L1 - A2 - N19">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="869" y="842" curvePoint="false"/>
+<arcpath id="001" x="736" y="752" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq_2 to Maquina 2" source="R2 Toma Pieza de Maq 2 - L2 - N13" target="Maquina 2 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="226" y="541" curvePoint="false"/>
+<arcpath id="001" x="330" y="645" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq_2 to Restringe R2" source="R2 Toma Pieza de Maq 2 - L2 - N13" target="Restringe R2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="221" y="521" curvePoint="false"/>
+<arcpath id="001" x="279" y="70" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq_2 to Traslado Pieza a Output 2" source="R2 Toma Pieza de Maq 2 - L2 - N13" target="R2 Trasladando Pieza a Output 2 - L2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="221" y="551" curvePoint="false"/>
+<arcpath id="001" x="220" y="656" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq_3 to Maquina 3" source="R2 Toma Pieza de Maq 3 - L1 - A2 - N14" target="Maquina 3 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="750" y="371" curvePoint="false"/>
+<arcpath id="001" x="882" y="303" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq_3 to Restringe R1" source="R2 Toma Pieza de Maq 3 - L1 - A2 - N14" target="Restringe R1, A1 o A2 - L1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="747" y="356" curvePoint="false"/>
+<arcpath id="001" x="847" y="40" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq_3 to Traslado Pieza a Maq_4" source="R2 Toma Pieza de Maq 3 - L1 - A2 - N14" target="R2 Trasladando Pieza a Maq 4 - L1 - A2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="746" y="386" curvePoint="false"/>
+<arcpath id="001" x="746" y="446" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq 1 to Maquina 1" source="R2 Toma Pieza de Maq 1 - L1 - A1 - N12" target="Maquina 1 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="477" y="356" curvePoint="false"/>
+<arcpath id="001" x="477" y="361" curvePoint="false"/>
+<arcpath id="002" x="369" y="290" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq 1 to Restringe R1" source="R2 Toma Pieza de Maq 1 - L1 - A1 - N12" target="Restringe R1, A1 o A2 - L1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="481" y="366" curvePoint="false"/>
+<arcpath id="001" x="839" y="36" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq 1 to Traslado Pieza  a Maq 2" source="R2 Toma Pieza de Maq 1 - L1 - A1 - N12" target="R2 Trasladando Pieza a Maq 2 - L1 - A1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="476" y="386" curvePoint="false"/>
+<arcpath id="001" x="476" y="446" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq 2 to Maquina 2" source="R3 Toma Pieza de Maq 2 - L1 - A1 - N18" target="Maquina 2 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="470" y="777" curvePoint="false"/>
+<arcpath id="001" x="352" y="666" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq 3 to Maquina 3" source="R1 Toma Pieza de Maq 3 - L3 - N5" target="Maquina 3 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1025" y="199" curvePoint="false"/>
+<arcpath id="001" x="908" y="287" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq 3 to Restringe R2" source="R1 Toma Pieza de Maq 3 - L3 - N5" target="Restringe R2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1026" y="192" curvePoint="false"/>
+<arcpath id="001" x="296" y="59" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq 3 to Traslado Pieza a Output 3" source="R1 Toma Pieza de Maq 3 - L3 - N5" target="R1 Trasladando Pieza a Output 3 - L3">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1031" y="176" curvePoint="false"/>
+<arcpath id="001" x="1031" y="130" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq 4 to Maquina 4" source="R2 Toma Pieza de Maq 4 - L3 - N15 " target="Maquina 4 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1025" y="545" curvePoint="false"/>
+<arcpath id="001" x="908" y="632" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza de Maq 4 to Traslado Pieza a Maq 3" source="R2 Toma Pieza de Maq 4 - L3 - N15 " target="R2 Trasladando Pieza a Maq 3 - L3">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1031" y="521" curvePoint="false"/>
+<arcpath id="001" x="1031" y="476" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma pieza imput 1 to Traslada pieza a Maq 1 o Maq 3" source="R1 Toma Pieza de  Imput 1 - L1 - N4" target="R1 Trasladando  Pieza a Maq 1 o Maq 3 - L1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="626" y="56" curvePoint="false"/>
+<arcpath id="001" x="602" y="102" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza Imput 2 to Traslado Pieza a Maq_2" source="R2 Toma Pieza de Imput 2 - L2 - N11" target="R2 Trasladando Pieza a Maq 2 - L2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="221" y="206" curvePoint="false"/>
+<arcpath id="001" x="220" y="266" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza Imput 3 to Traslado Pieza a Maq 4" source="R3 Toma Pieza Imput 3 - L3 - N20" target="R3 Trasladando  Pieza a Maq 4 - L3">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1031" y="941" curvePoint="false"/>
+<arcpath id="001" x="1031" y="866" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza Maq_4 to Maquina 4" source="R3 Toma Pieza de Maq 4 - L1 - A2 - N19" target="Maquina 4 Esperando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="736" y="739" curvePoint="false"/>
+<arcpath id="001" x="883" y="649" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza Maq_4 to Restringe Alt 1 y Alt 2" source="R3 Toma Pieza de Maq 4 - L1 - A2 - N19" target="Restringe L1 - Alt 2 y L3">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="736" y="745" curvePoint="false"/>
+<arcpath id="001" x="1317" y="482" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Toma Pieza Maq_4 to Traslado Pieza a Output 1" source="R3 Toma Pieza de Maq 4 - L1 - A2 - N19" target="R3 Trasladando Pieza a Output 1 - L1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="731" y="761" curvePoint="false"/>
+<arcpath id="001" x="730" y="836" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Trabaja Maq_2 to Toma Pieza de Maq_2" source=" Maq 2 Trabajando - L2" target="R2 Toma Pieza de Maq 2 - L2 - N13">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="221" y="476" curvePoint="false"/>
+<arcpath id="001" x="221" y="521" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Trabaja Maq_3 to Toma Pieza de Maq_3" source="Maq 3 Trabajando - L1 - A2" target="R2 Toma Pieza de Maq 3 - L1 - A2 - N14">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="746" y="296" curvePoint="false"/>
+<arcpath id="001" x="747" y="356" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Trabaja Maq_4 to Toma Pieza Maq_4" source="Maq 4 Trabajando - L1 - A2" target="R3 Toma Pieza de Maq 4 - L1 - A2 - N19">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="743" y="656" curvePoint="false"/>
+<arcpath id="001" x="731" y="731" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Trabaja Maq 1 to Toma Pieza de Maq 1" source="Maq 1 Trabajando - L1 - A1" target="R2 Toma Pieza de Maq 1 - L1 - A1 - N12">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="476" y="296" curvePoint="false"/>
+<arcpath id="001" x="477" y="356" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Trabaja Maq 2 to Toma Pieza de Maq 2" source="Maq 2 Trabajando - L1 - A1" target="R3 Toma Pieza de Maq 2 - L1 - A1 - N18">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="476" y="670" curvePoint="false"/>
+<arcpath id="001" x="477" y="761" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Trabaja Maq 3 to Toma Pieza de Maq 3" source="Maq 3 Trabajando" target="R1 Toma Pieza de Maq 3 - L3 - N5">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1030" y="266" curvePoint="false"/>
+<arcpath id="001" x="1031" y="206" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Trabaja Maq 4 to Toma Pieza de Maq 4" source=" Maq 4 Trabajando - L3" target="R2 Toma Pieza de Maq 4 - L3 - N15 ">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1030" y="626" curvePoint="false"/>
+<arcpath id="001" x="1031" y="551" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Traslada pieza a Maq 1 o Maq 3 to Deposita Pieza en Maq_3" source="R1 Trasladando  Pieza a Maq 1 o Maq 3 - L1" target="R1 Deposita Pieza en Maq 3 - L1 - A2 - N2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="610" y="123" curvePoint="false"/>
+<arcpath id="001" x="740" y="191" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Traslada pieza a Maq 1 o Maq 3 to Deposita Pieza Maq 1" source="R1 Trasladando  Pieza a Maq 1 o Maq 3 - L1" target="R1 Deposita Pieza en Maq 1 - L1 - A1 - N1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="583" y="124" curvePoint="false"/>
+<arcpath id="001" x="481" y="186" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Traslado Pieza a Maq_2 to Deposita Pieza en Maq_2" source="R2 Trasladando Pieza a Maq 2 - L2" target="R2 Deposita Pieza en Maq 2 - L2 - N7">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="221" y="296" curvePoint="false"/>
+<arcpath id="001" x="221" y="356" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Traslado Pieza a Maq_4 to Deposita Pieza en Maq_4" source="R2 Trasladando Pieza a Maq 4 - L1 - A2" target="R2 Deposita Pieza en Maq 4 - L1 - A2 - N9">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="746" y="476" curvePoint="false"/>
+<arcpath id="001" x="747" y="521" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Traslado Pieza  a Maq 2 to Deposita Pieza Maq 2" source="R2 Trasladando Pieza a Maq 2 - L1 - A1" target="R2 Deposita Pieza en Maq 2 - L1 - A1 - N6">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="476" y="476" curvePoint="false"/>
+<arcpath id="001" x="477" y="521" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Traslado Pieza a Maq 3 to Deposita Pieza en Maq 3" source="R2 Trasladando Pieza a Maq 3 - L3" target="R2 Deposita Pieza en Maq 3 - L3 - N8">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1030" y="446" curvePoint="false"/>
+<arcpath id="001" x="1031" y="386" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Traslado Pieza a Maq 4 to Deposita Pieza en Maq 4" source="R3 Trasladando  Pieza a Maq 4 - L3" target="R3 Deposita Pieza en Maq 4 - L3 - N16">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1031" y="836" curvePoint="false"/>
+<arcpath id="001" x="1037" y="736" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Traslado Pieza a Output 1 to Output 1" source="R3 Trasladando Pieza a Output 1 - L1" target="R3 Deposita Pieza en Output 1 - L1 - N17">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="731" y="866" curvePoint="false"/>
+<arcpath id="001" x="731" y="926" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Traslado Pieza a Output 2 to Output 2" source="R2 Trasladando Pieza a Output 2 - L2" target="R2 Deposita Pieza en Output 2 - L2 - N10">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="221" y="686" curvePoint="false"/>
+<arcpath id="001" x="221" y="761" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Traslado Pieza a Output 3 to Output 3" source="R1 Trasladando Pieza a Output 3 - L3" target="R1 Deposita Pieza en Output 3 - L3 - N3">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1030" y="101" curvePoint="false"/>
+<arcpath id="001" x="1031" y="56" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>

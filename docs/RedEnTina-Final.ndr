@@ -1,0 +1,141 @@
+p 985.0 550.0 {Pieza en Imput 3} 30 n
+t 195.0 665.0 {R2 Toma Pieza de Maq 2 - L2} 0 w n
+t 195.0 860.0 {R2 Deposita Pieza en Output 2 - L2} 0 w n
+p 415.0 550.0 {R2 Trasladando Pieza a Maq 2 - L1 - A1} 0 n
+t 415.0 665.0 {R2 Deposita Pieza en Maq 2 - L1 - A1} 0 5 n
+p 60.0 550.0 {Pieza en Imput 2} 20 n
+p 195.0 395.0 {R2 Trasladando Pieza a Maq 2 - L2} 0 n
+p 415.0 395.0 {Maq 1 Trabajando - L1 - A1} 0 n
+t 540.0 135.0 {R1 Toma Pieza de Imput 1 - L1} 0 w n
+t 195.0 465.0 {R2 Deposita Pieza en Maq 2 - L2} 0 15 n
+p 195.0 550.0 {Maq 2 Trabajando - L2} 0 n
+p 305.0 755.0 {Maquina 2 Esperando} 1 s
+p 415.0 755.0 { Maq 2 Trabajando - L1 - A1} 0 n
+p 195.0 755.0 {R2 Trasladando Pieza a Output 2} 0 n
+t 415.0 860.0 {R3 Toma Pieza de Maq 2 - L1-A1} 0 w n
+t 195.0 290.0 {R2 Toma Pieza de Imput 2 - L2} 0 w n
+t 845.0 115.0 {R1 Deposita Pieza en Output 3 - L3} 0 w n
+t 640.0 290.0 {R1 Deposita Pieza en Maq  3 - L1 - A2} 0 24 n
+p 640.0 395.0 {Maq 3 Trabajando - L1 - A2} 0 n
+p 755.0 395.0 {Maquina 3 Esperando} 1 s
+t 640.0 475.0 {R2 Toma Pieza de Maq 3 - L1 - A2} 0 w n
+t 845.0 475.0 {R2 Deposita Pieza en Maq 3 - L3} 0 18 n
+p 640.0 550.0 {R2 Trasladando Pieza a Maq 4 - L1 - A2 } 0 s
+t 640.0 665.0 {R2 Deposita en Maq 4 - L1 - A2} 0 10 n
+p 845.0 550.0 {R2 Trasladando Pieza a Maq 3 - L3} 0 n
+t 845.0 665.0 {R2 Toma Pieza de Maq 4 - L3} 0 w n
+p 425.0 1030.0 {Pieza en Imput 1} 10 n
+p 640.0 755.0 {Maq 4 Trabajando - L1 - A2} 0 w
+p 720.0 755.0 {Maquina 4 Esperando} 1 n
+p 845.0 755.0 {Maq 4 Trabajando - L3} 0 n
+t 640.0 860.0 { R3 Toma Pieza Maq 4 - L1 - A2} 0 w n
+t 845.0 860.0 {R3 Deposita pieza en Maq 4 - L3 } 0 21 n
+p 640.0 950.0 {R3 Trasladando Pieza a Output 1 - L1} 0 w
+t 640.0 1025.0 {R3 Deposita Pieza en Output 1 - L1 } 0 w n
+p 750.0 950.0 {Robot 3 Esperando} 1 n
+p 845.0 950.0 {R3 Trasladando Pieza a Maq 4  - L3} 0 s
+t 845.0 1025.0 {R3 Toma Pieza de Imput 3 - L3} 0 w n
+p 720.0 90.0 {Restringe R1,  A1 y A2 - L1} 1 n
+p 845.0 395.0 {Maq 3 Trabajando - L3} 0 n
+p 540.0 240.0 {R1 Trasladando  Pieza a Maq 1  o Maq 3 - L1} 0 w
+p 1195.0 425.0 {Restringe L1 - Alt 2 y L3} 1 n
+p 305.0 395.0 {Maquina 1 Esperando} 1 s
+p 260.0 90.0 {Restringe R2} 1 n
+t 845.0 300.0 {R1 Toma Pieza de Maq 3 - L3} 0 w n
+p 835.0 225.0 {R1 Trasladando Pieza a Output 3 - L3} 0 n
+p 750.0 225.0 {Robot 1 Esperando} 1 s
+p 540.0 550.0 {Robot 2 Esperando} 1 w
+t 415.0 290.0 {R1 Deposita Pieza en Maq 1 - L1 - A1} 0 30 n
+t 415.0 475.0 {R2 Toma Pieza de Maq 1 - L1 - A1} 0 w n
+e {R2 Deposita en Maq 4 - L1 - A2} {Restringe R2} 1 n
+e {R2 Deposita Pieza en Maq 2 - L1 - A1} {Restringe R2} 1 n
+e {R1 Deposita Pieza en Maq 1 - L1 - A1} {Robot 1 Esperando} 1 n
+e {Robot 1 Esperando} {R1 Toma Pieza de Imput 1 - L1} 1 n
+e {R1 Deposita Pieza en Output 3 - L3} {Robot 1 Esperando} 1 n
+e {R1 Toma Pieza de Imput 1 - L1} {R1 Trasladando  Pieza a Maq 1  o Maq 3 - L1} 1 n
+e {R1 Trasladando Pieza a Output 3 - L3} {R1 Deposita Pieza en Output 3 - L3} 1 n
+e {Robot 1 Esperando} {R1 Toma Pieza de Maq 3 - L3} 1 n
+e {R1 Toma Pieza de Maq 3 - L3} {R1 Trasladando Pieza a Output 3 - L3} 1 n
+e {R1 Deposita Pieza en Maq  3 - L1 - A2} {Robot 1 Esperando} 1 n
+e {R1 Trasladando  Pieza a Maq 1  o Maq 3 - L1} {R1 Deposita Pieza en Maq  3 - L1 - A2} 1 n
+e {Maquina 3 Esperando} {R1 Deposita Pieza en Maq  3 - L1 - A2} 1 n
+e {R1 Toma Pieza de Maq 3 - L3} {Maquina 3 Esperando} 1 n
+e {Maq 3 Trabajando - L3} {R1 Toma Pieza de Maq 3 - L3} 1 n
+e {R1 Deposita Pieza en Maq  3 - L1 - A2} {Maq 3 Trabajando - L1 - A2} 1 n
+e {Maquina 3 Esperando} {R2 Deposita Pieza en Maq 3 - L3} 1 n
+e {R2 Deposita Pieza en Maq 3 - L3} {Maq 3 Trabajando - L3} 1 n
+e {R2 Toma Pieza de Maq 3 - L1 - A2} {Maquina 3 Esperando} 1 n
+e {Maq 3 Trabajando - L1 - A2} {R2 Toma Pieza de Maq 3 - L1 - A2} 1 n
+e {R2 Toma Pieza de Maq 3 - L1 - A2} {R2 Trasladando Pieza a Maq 4 - L1 - A2 } 1 n
+e {R2 Trasladando Pieza a Maq 3 - L3} {R2 Deposita Pieza en Maq 3 - L3} 1 n
+e {R2 Trasladando Pieza a Maq 4 - L1 - A2 } 0.7446967895 1.435283218 {R2 Deposita en Maq 4 - L1 - A2} 0.2451786089 2.369304281 1 n
+e {R2 Toma Pieza de Maq 4 - L3} {R2 Trasladando Pieza a Maq 3 - L3} 1 n
+e {R2 Deposita en Maq 4 - L1 - A2} {Maq 4 Trabajando - L1 - A2} 1 n
+e {Maq 4 Trabajando - L3} {R2 Toma Pieza de Maq 4 - L3} 1 n
+e {R2 Toma Pieza de Maq 4 - L3} {Maquina 4 Esperando} 1 n
+e {Maquina 4 Esperando} {R2 Deposita en Maq 4 - L1 - A2} 1 n
+e {Maq 4 Trabajando - L1 - A2} { R3 Toma Pieza Maq 4 - L1 - A2} 1 n
+e {R3 Deposita pieza en Maq 4 - L3 } {Maq 4 Trabajando - L3} 1 n
+e {Robot 3 Esperando} { R3 Toma Pieza Maq 4 - L1 - A2} 1 n
+e {R3 Deposita pieza en Maq 4 - L3 } {Robot 3 Esperando} 1 n
+e {Maquina 4 Esperando} {R3 Deposita pieza en Maq 4 - L3 } 1 n
+e { R3 Toma Pieza Maq 4 - L1 - A2} {Maquina 4 Esperando} 1 n
+e {R3 Toma Pieza de Imput 3 - L3} {R3 Trasladando Pieza a Maq 4  - L3} 1 n
+e {R3 Trasladando Pieza a Maq 4  - L3} {R3 Deposita pieza en Maq 4 - L3 } 1 n
+e {Robot 3 Esperando} {R3 Toma Pieza de Imput 3 - L3} 1 n
+e { R3 Toma Pieza Maq 4 - L1 - A2} {R3 Trasladando Pieza a Output 1 - L1} 1 n
+e {R3 Trasladando Pieza a Output 1 - L1} {R3 Deposita Pieza en Output 1 - L1 } 1 n
+e {R3 Deposita Pieza en Output 1 - L1 } 0.007573080677 34.80098777 {Robot 3 Esperando} 0.6978387976 43.70938458 1 n
+e {Pieza en Imput 3} 0.8163202352 55.21161482 {R3 Toma Pieza de Imput 3 - L3} 0.01979170993 120.1101269 1 n
+e {R1 Trasladando  Pieza a Maq 1  o Maq 3 - L1} {R1 Deposita Pieza en Maq 1 - L1 - A1} 1 n
+e {R1 Deposita Pieza en Maq 1 - L1 - A1} {Maq 1 Trabajando - L1 - A1} 1 n
+e {Maquina 1 Esperando} {R1 Deposita Pieza en Maq 1 - L1 - A1} 1 n
+e {Maq 1 Trabajando - L1 - A1} {R2 Toma Pieza de Maq 1 - L1 - A1} 1 n
+e {R2 Toma Pieza de Maq 1 - L1 - A1} {Maquina 1 Esperando} 1 n
+e {R2 Toma Pieza de Maq 1 - L1 - A1} {R2 Trasladando Pieza a Maq 2 - L1 - A1} 1 n
+e {R2 Trasladando Pieza a Maq 2 - L1 - A1} {R2 Deposita Pieza en Maq 2 - L1 - A1} 1 n
+e {R2 Deposita Pieza en Maq 2 - L1 - A1} { Maq 2 Trabajando - L1 - A1} 1 n
+e { Maq 2 Trabajando - L1 - A1} {R3 Toma Pieza de Maq 2 - L1-A1} 1 n
+e {Robot 3 Esperando} 0.4209301095 78.14240208 {R3 Toma Pieza de Maq 2 - L1-A1} 0.03111332785 85.21653298 1 n
+e {R3 Toma Pieza de Maq 2 - L1-A1} 0.7712233609 68.47580869 {R3 Trasladando Pieza a Output 1 - L1} 0.5298302755 97.71963298 1 n
+e {Maquina 2 Esperando} {R2 Deposita Pieza en Maq 2 - L1 - A1} 1 n
+e {R3 Toma Pieza de Maq 2 - L1-A1} {Maquina 2 Esperando} 1 n
+e {R2 Toma Pieza de Imput 2 - L2} {R2 Trasladando Pieza a Maq 2 - L2} 1 n
+e {R2 Trasladando Pieza a Maq 2 - L2} {R2 Deposita Pieza en Maq 2 - L2} 1 n
+e {R2 Deposita Pieza en Maq 2 - L2} {Maq 2 Trabajando - L2} 1 n
+e {Maq 2 Trabajando - L2} {R2 Toma Pieza de Maq 2 - L2} 1 n
+e {R2 Toma Pieza de Maq 2 - L2} {R2 Trasladando Pieza a Output 2} 1 n
+e {R2 Trasladando Pieza a Output 2} {R2 Deposita Pieza en Output 2 - L2} 1 n
+e {Pieza en Imput 2} 0.2980879071 56.07294676 {R2 Toma Pieza de Imput 2 - L2} 0.5376331669 59.35587349 1 n
+e {Maquina 2 Esperando} 0.25 66.212567 {R2 Deposita Pieza en Maq 2 - L2} 0.9075697654 95.0365164 1 n
+e {R2 Toma Pieza de Maq 2 - L2} {Maquina 2 Esperando} 1 n
+e {Robot 2 Esperando} 0.202686432 149.7533391 {R2 Toma Pieza de Imput 2 - L2} 0.07625277207 60.32514544 1 n
+e {Robot 2 Esperando} 0.3444346095 36.05835121 {R2 Toma Pieza de Maq 1 - L1 - A1} 0.9374428808 30.85764926 1 n
+e {R2 Deposita Pieza en Maq 2 - L2} 0.07267101539 44.15133461 {Robot 2 Esperando} 0.3763374089 69.64625063 1 n
+e {Robot 2 Esperando} 0.6185074868 48.21723103 {R2 Toma Pieza de Maq 2 - L2} 0.9850647167 59.35587449 1 n
+e {R2 Deposita Pieza en Maq 2 - L1 - A1} 0.06487657069 33.32040239 {Robot 2 Esperando} 0.6776955803 33.26959164 1 n
+e {R2 Deposita Pieza en Output 2 - L2} 0.9806570431 91.75218244 {Robot 2 Esperando} 0.7611896311 49.48371713 1 n
+e {Robot 2 Esperando} {R2 Toma Pieza de Maq 3 - L1 - A2} 1 n
+e {R2 Deposita en Maq 4 - L1 - A2} {Robot 2 Esperando} 1 n
+e {R2 Deposita Pieza en Maq 3 - L3} 0.4759078541 49.39663928 {Robot 2 Esperando} 0.102416383 45.5211404 1 n
+e {Robot 2 Esperando} 0.8799207588 56.79561282 {R2 Toma Pieza de Maq 4 - L3} 0.5104556578 63.03791967 1 n
+e {Pieza en Imput 1} 0.5089001489 325.7784905 {R1 Toma Pieza de Imput 1 - L1} 0.4411127222 336.4504984 1 n
+e {Restringe R2} {R2 Toma Pieza de Imput 2 - L2} 1 n
+e {R2 Toma Pieza de Maq 2 - L2} 0.1353369821 144.3314456 {Restringe R2} 0.7574218558 124.3334077 1 n
+e {Restringe R2} 0.8736397376 205.7633167 {R2 Toma Pieza de Maq 4 - L3} 0.4070985684 193.1397072 1 n
+e {R1 Toma Pieza de Maq 3 - L3} {Restringe R2} 1 n
+e {Restringe R2} {R2 Toma Pieza de Maq 1 - L1 - A1} 1 n
+e {Restringe R2} 0.8967381847 149.8208706 {R2 Toma Pieza de Maq 3 - L1 - A2} 0.3535371748 141.2668726 1 n
+e {Restringe R1,  A1 y A2 - L1} {R1 Toma Pieza de Imput 1 - L1} 1 n
+e {R2 Toma Pieza de Maq 3 - L1 - A2} {Restringe R1,  A1 y A2 - L1} 1 n
+e {Restringe L1 - Alt 2 y L3} {R3 Toma Pieza de Imput 3 - L3} 1 n
+e {Restringe L1 - Alt 2 y L3} {R1 Deposita Pieza en Maq  3 - L1 - A2} 1 n
+e { R3 Toma Pieza Maq 4 - L1 - A2} {Restringe L1 - Alt 2 y L3} 1 n
+e {R2 Deposita Pieza en Output 2 - L2} 0.4374727172 100.8083501 {Pieza en Imput 2} 0.7530311571 88.11018167 1 n
+e {R3 Deposita Pieza en Output 1 - L1 } {Pieza en Imput 1} 1 n
+e {R1 Deposita Pieza en Output 3 - L3} 0.872232368 136.4697934 {Pieza en Imput 3} 0.2560716691 109.9880323 1 n
+e {R2 Toma Pieza de Maq 1 - L1 - A1} {Restringe R1,  A1 y A2 - L1} 1 n
+e {R1 Toma Pieza de Maq 3 - L3} {Restringe L1 - Alt 2 y L3} 1 n
+h RedSinInterbloqueo_PERFECTA_REFINADA
+
+
